@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -298,6 +300,14 @@ export default {
             opacity: '1',
             transform: 'translateX(0px)',
           },
+        },
+        barMove: {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(calc(100% - 1px))',
+          },
         }
       },
       animation: {
@@ -306,7 +316,11 @@ export default {
         'burger-hover-2': 'burgerHover 1s infinite ease-in-out alternate forwards 200ms',
         'burger-hover-4': 'burgerHover 1s infinite ease-in-out alternate forwards 400ms',
         'burger-hover-6': 'burgerHover 1s infinite ease-in-out alternate forwards 600ms',
+        animationBar: 'barMove 3s linear infinite forwards'
       },
+      fontFamily: {
+        'poppins':'Poppins'
+      }
     }
   },
   plugins: [],
