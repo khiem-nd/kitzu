@@ -1,13 +1,589 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Kitzu - Personal Porfolio Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
-  <body class="bg-blue-300">
-    <div id="app"></div>
+  <body class="bg-[#111] content-center">
+    <section
+      id="about"
+      class="sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white font-poppins px-4"
+    >
+      <!-- Close button -->
+      <div class="absolute right-3 lg:right-12 top-5">
+        <button type="button">
+          <ion-icon name="close-outline" class="size-11"></ion-icon>
+        </button>
+      </div>
+
+      <!-- Contents -->
+      <div class="-mx-4">
+        <div class="px-4">
+          <div class="my-16">
+            <!-- About me -->
+            <div class="text-center">
+              <div class="mb-20">
+                <div class="mb-20">
+                  <p class="mb-4 text-neutral-400 text-sm">Get to know me</p>
+                  <p class="mb-9 text-4xl md:text-[42px] lg:text-5xl font-bold">
+                    About Me
+                  </p>
+                  <!-- Running bar -->
+                  <div
+                    class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
+                  >
+                    <div
+                      class="square-container absolute top-0 left-0 w-full h-full animate-animationBar"
+                    >
+                      <div class="square w-1 h-1 bg-black absolute"></div>
+                    </div>
+                    <div
+                      class="square-container absolute top-0 left-2 w-full h-full animate-animationBar"
+                    >
+                      <div class="square w-1 h-1 bg-black absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Who am i -->
+            <div class="mb-24 pb-12 md:pb-0 lg:mb-28">
+              <div class="-mx-4 grid grid-cols-12">
+                <div class="col-span-12 lg:col-span-5 px-4">
+                  <img
+                    class="p-1 rounded-full size-48 md:size-60 mx-auto mb-8 object-cover lg:size-auto lg:h-[440px] lg:w-full lg:rounded-none lg:p-1 lg:mb-0 xl:w-[430px] xl:mx-0 xl:h-auto"
+                    src="./src/img/info-img.jpg"
+                    alt="About Picture"
+                  />
+                </div>
+                <div class="col-span-12 lg:col-span-7 lg:flex">
+                  <div class="px-4 m-auto">
+                    <h2
+                      class="text-green-600 text-lg lg:text-2xl mb-4 lg:max-xl:hidden"
+                    >
+                      Who am i?
+                    </h2>
+                    <h6
+                      class="text-xl leading-relaxed md:text-2xl md:leading-10 xl:text-3xl xl:leading-relaxed font-bold mb-4"
+                    >
+                      I'm Emma Smith, a visual UX/UI Designer and Web Developer
+                    </h6>
+                    <p
+                      class="text-neutral-400 leading-loose text-sm pb-7 border-b-2 border-white border-opacity-10 lg:pb-5 xl:pb-7 xl:leading-7"
+                    >
+                      I am a freelancer based in the United Kingdom and i have
+                      been building noteworthy UX/UI designs and websites for
+                      years, which comply with the latest design trends. I help
+                      convert a vision and an idea into meaningful and useful
+                      products. Having a sharp eye for product evolution helps
+                      me prioritize tasks, iterate fast and deliver faster.
+                    </p>
+                    <div class="py-6 lg:mb-1 lg:py-5 xl:py-7">
+                      <div class="grid grid-cols-2 -mx-4">
+                        <div
+                          class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
+                        >
+                          <span class="font-normal text-gray-300 mr-2.5"
+                            >Name:</span
+                          >
+                          <p class="inline-block text-neutral-400">
+                            Emma Smith
+                          </p>
+                        </div>
+                        <div
+                          class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
+                        >
+                          <span class="font-normal text-gray-300 mr-2.5"
+                            >Email:</span
+                          >
+                          <p
+                            class="inline-block text-green-600 hover:text-green-900 transition"
+                          >
+                            <a href="mailto:emma@example.com"
+                              >emma@example.com</a
+                            >
+                          </p>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-2 md:mb-0 -mx-4">
+                        <div
+                          class="text-sm px-4 col-span-2 mb-2.5 md:mb-0 md:col-span-1 leading-7"
+                        >
+                          <span class="font-normal text-gray-300 mr-2.5"
+                            >Age:</span
+                          >
+                          <p class="inline-block text-neutral-400">21</p>
+                        </div>
+                        <div
+                          class="text-sm px-4 col-span-2 md:col-span-1 leading-7"
+                        >
+                          <span class="font-normal text-gray-300 mr-2.5"
+                            >From:</span
+                          >
+                          <p class="inline-block text-neutral-400">
+                            Liverpool, UK
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="lg:flex">
+                      <button
+                        type="button"
+                        class="mb-7 mr-6 px-9 py-2.5 md:mb-0 lg:mb-0 bg-green-600 border-solid rounded-3xl text-sm focus:bg-green-900 transition"
+                      >
+                        Download CV
+                      </button>
+                      <ul
+                        class="inline-flex before:border before:border-white before:w-14 before:h-0.5 before:opacity-30 before:mr-6 before:my-auto"
+                      >
+                        <li class="mr-2.5 text-xl my-auto">
+                          <a href="#0" class="focus:text-green-600 transition"
+                            ><ion-icon
+                              name="logo-twitter"
+                              class="opacity-80"
+                            ></ion-icon
+                          ></a>
+                        </li>
+                        <li class="mr-2.5 text-xl my-auto">
+                          <a href="#0" class="focus:text-green-600 transition"
+                            ><ion-icon
+                              name="logo-instagram"
+                              class="opacity-80"
+                            ></ion-icon
+                          ></a>
+                        </li>
+                        <li class="mr-2.5 text-xl my-auto">
+                          <a href="#0" class="focus:text-green-600 transition"
+                            ><ion-icon
+                              name="logo-linkedin"
+                              class="opacity-80"
+                            ></ion-icon
+                          ></a>
+                        </li>
+                        <li class="mr-2.5 text-xl my-auto">
+                          <a href="#0" class="focus:text-green-600 transition"
+                            ><ion-icon
+                              name="logo-github"
+                              class="opacity-80"
+                            ></ion-icon
+                          ></a>
+                        </li>
+                        <li class="mr-2.5 text-xl my-auto">
+                          <a href="#0" class="focus:text-green-600 transition"
+                            ><ion-icon
+                              name="logo-facebook"
+                              class="opacity-80"
+                            ></ion-icon
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service -->
+            <div class="mb-24 lg:mb-28">
+              <div class="mb-14">
+                <p class="mb-4 text-sm leading-7 text-neutral-400">
+                  Services i offer to my clients
+                </p>
+                <h2 class="text-white text-4xl font-bold">My Services</h2>
+              </div>
+              <div class="grid grid-cols-12 -mx-4">
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="logo-css3"
+                      size=""
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
+                      Design Trends
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="images"
+                      size="large"
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
+                      PSD Design
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="logo-ionic"
+                      size="large"
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
+                      Customer Support
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="logo-wordpress"
+                      size="large"
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xlleading-5">
+                      Web Development
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="move"
+                      size="large"
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
+                      Fully Responsive
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                    <ion-icon
+                      name="rocket-sharp"
+                      size="large"
+                      class="mb-5 size-14 text-green-600"
+                    ></ion-icon>
+                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
+                      Branding
+                    </h6>
+                    <p class="text-neutral-400 text-sm leading-8">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="mb-24 lg:mb-28">
+              <div class="mb-12">
+                <p class="mb-4 text-sm text-neutral-400 leading-7">
+                  What my clients think about me
+                </p>
+                <h2 class="text-4xl text-white font-bold">Testimonials</h2>
+              </div>
+              <div class="swiper mySwiper -mr-7">
+                <div class="swiper-wrapper w-0">
+                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
+                    <div
+                      class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15"
+                    >
+                      <div class="mb-6 flex justify-between">
+                        <div class="flex">
+                          <img
+                            class="mr-3.5 rounded-full size-14"
+                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-2.jpg"
+                            alt="Client"
+                          />
+                          <div class="my-auto">
+                            <h6 class="mb-2">John Santana</h6>
+                            <p class="text-neutral-400 leading-3">
+                              Entrepreneur
+                            </p>
+                          </div>
+                        </div>
+                        <div class="">
+                          <img
+                            src="./src//img/quotation.png"
+                            alt="quotation"
+                            class="size-12"
+                          />
+                        </div>
+                      </div>
+                      <p class="text-sm text-neutral-400 leading-7">
+                        Emma did an excellent creative job, addressing our
+                        request quickly, and also providing her own graphic
+                        insight, being open to feedback and changes or edits
+                        when they arose. She worked with us the entire way.
+                        Highly recommended.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
+                    <div
+                      class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15"
+                    >
+                      <div class="mb-6 flex justify-between">
+                        <div class="flex">
+                          <img
+                            class="mr-3.5 rounded-full size-14"
+                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-3.jpg"
+                            alt="Client"
+                          />
+                          <div class="my-auto">
+                            <h6 class="mb-2">Maria Wilson</h6>
+                            <p class="text-neutral-400 leading-3">
+                              Envato Customer
+                            </p>
+                          </div>
+                        </div>
+                        <div class="">
+                          <img
+                            src="./src//img/quotation.png"
+                            alt="quotation"
+                            class="size-12"
+                          />
+                        </div>
+                      </div>
+                      <p class="text-sm text-neutral-400 leading-7">
+                        Emma did an excellent creative job, addressing our
+                        request quickly, and also providing her own graphic
+                        insight, being open to feedback and changes or edits
+                        when they arose. She worked with us the entire way.
+                        Highly recommended.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
+                    <div
+                      class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15"
+                    >
+                      <div class="mb-6 flex justify-between">
+                        <div class="flex">
+                          <img
+                            class="mr-3.5 rounded-full size-14"
+                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-1.jpg"
+                            alt="Client"
+                          />
+                          <div class="my-auto">
+                            <h6 class="mb-2">Julia Sakura</h6>
+                            <p class="text-neutral-400 leading-3">
+                              Envato Customer
+                            </p>
+                          </div>
+                        </div>
+                        <div class="">
+                          <img
+                            src="./src//img/quotation.png"
+                            alt="quotation"
+                            class="size-12"
+                          />
+                        </div>
+                      </div>
+                      <p class="text-sm text-neutral-400 leading-7">
+                        Emma did an excellent creative job, addressing our
+                        request quickly, and also providing her own graphic
+                        insight, being open to feedback and changes or edits
+                        when they arose. She worked with us the entire way.
+                        Highly recommended.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="swiper-pagination relative mt-7 size-7"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Plan -->
+            <div class="">
+              <div class="-mx-4">
+                <div class="px-4">
+                  <div class="mb-12">
+                    <p class="mb-4 text-sm text-neutral-400 leading-7">
+                      Get started with my services
+                    </p>
+                    <h2 class="text-4xl text-white font-bold">Choose a Plan</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="-mx-4 grid grid-cols-3">
+                <div class="px-4 col-span-3 lg:col-span-1">
+                  <div
+                    class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15"
+                  >
+                    <ion-icon
+                      name="egg"
+                      class="text-green-600 size-14 mb-7"
+                    ></ion-icon>
+                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
+                      Standard
+                    </h3>
+                    <h2 class="mb-5 text-2xl font-light text-slate-100">
+                      $19/month
+                    </h2>
+                    <ul class="mb-4 text-sm">
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Mobile App Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Responsive Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Database Development
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">Web Design</li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        24/7 Support
+                      </li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm"
+                    >
+                      Get Standard
+                    </button>
+                  </div>
+                </div>
+                <div class="px-4 col-span-3 lg:col-span-1">
+                  <div
+                    class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15"
+                  >
+                    <ion-icon
+                      name="rocket-sharp"
+                      class="text-green-600 size-14 mb-7"
+                    ></ion-icon>
+                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
+                      Professional
+                    </h3>
+                    <h2 class="mb-5 text-2xl font-light text-slate-100">
+                      $29/month
+                    </h2>
+                    <ul class="mb-4 text-sm">
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Mobile App Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Responsive Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Database Development
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">Web Design</li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        24/7 Support
+                      </li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm"
+                    >
+                      Get Pro
+                    </button>
+                  </div>
+                </div>
+                <div class="px-4 col-span-3 lg:col-span-1">
+                  <div
+                    class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15"
+                  >
+                    <ion-icon
+                      name="logo-ionic"
+                      class="text-green-600 size-14 mb-7"
+                    ></ion-icon>
+                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
+                      Business
+                    </h3>
+                    <h2 class="mb-5 text-2xl font-light text-slate-100">
+                      $19/month
+                    </h2>
+                    <ul class="mb-4 text-sm">
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Mobile App Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Responsive Design
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        Database Development
+                      </li>
+                      <li class="p-2 text-neutral-400 leading-7">Web Design</li>
+                      <li class="p-2 text-neutral-400 leading-7">
+                        24/7 Support
+                      </li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm"
+                    >
+                      Get Business
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.ts"></script>
+    <!-- Swiperjs -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            enabled: true,
+            slidesPerView: 1,
+          },
+          // when window width is >= 768
+          768: {
+            enabled: true,
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
