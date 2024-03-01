@@ -308,7 +308,7 @@ export default {
           '100%': {
             transform: 'translateX(calc(100% - 1px))',
           },
-        }
+        },
       },
       animation: {
         shine: 'shine 0.8s',
