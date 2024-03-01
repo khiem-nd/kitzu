@@ -7,7 +7,7 @@ export default {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1280px",
+      "2xl": "1536px",
     },
     colors: () => ({
       inherit: "inherit",
@@ -279,6 +279,7 @@ export default {
         800: "#9f1239",
         900: "#881337",
       },
+      cover: "#111",
     }),
     extend: {
       keyframes: {
@@ -318,6 +319,10 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins"],
+      },
+      spacing: {
+        closeBtnResume: "6vw",
+        closeBtnAbout: "3vw",
       },
     },
   },

@@ -25,13 +25,14 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
-  <body class="bg-[#111] content-center">
+  <body class="bg-cover content-center">
+    <!-- About -->
     <section
       id="about"
-      class="sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white font-poppins px-4"
+      class="hidden sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white font-poppins px-4"
     >
       <!-- Close button -->
-      <div class="absolute right-3 lg:right-12 top-5">
+      <div class="fixed top-5 right-closeBtnResume">
         <button type="button">
           <ion-icon name="close-outline" class="size-11"></ion-icon>
         </button>
@@ -554,6 +555,299 @@
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section
+      id="Resume"
+      class="sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white font-poppins px-4"
+    >
+      <!-- Close button -->
+      <div class="fixed top-5 right-closeBtnAbout">
+        <button type="button">
+          <ion-icon name="close-outline" class="size-11"></ion-icon>
+        </button>
+      </div>
+
+      <!-- Contents -->
+      <div class="-mx-4">
+        <div class="px-4">
+          <div class="my-16">
+            <!-- Check out my Resume -->
+            <div class="text-center">
+              <div class="mb-20">
+                <div class="mb-20">
+                  <p class="mb-4 text-neutral-400 text-sm">
+                    Check out my Resume
+                  </p>
+                  <p class="mb-9 text-4xl md:text-[42px] lg:text-5xl font-bold">
+                    Resume
+                  </p>
+                  <!-- Running bar -->
+                  <div
+                    class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
+                  >
+                    <div
+                      class="square-container absolute top-0 left-0 w-full h-full animate-animationBar"
+                    >
+                      <div class="square w-1 h-1 bg-black absolute"></div>
+                    </div>
+                    <div
+                      class="square-container absolute top-0 left-2 w-full h-full animate-animationBar"
+                    >
+                      <div class="square w-1 h-1 bg-black absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Education and Experiene -->
+            <div class="mb-24 lg:mb-28">
+              <div class="-mx-4 grid grid-cols-2">
+                <div class="col-span-2 md:col-span-1 px-4 md:mr-5">
+                  <h2
+                    class="text-white text-2xl font-medium mb-5 leading-tight"
+                  >
+                    Education
+                  </h2>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      Computer Science
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      Cambridge University / 2004 - 2007
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      Bachelor Degree
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      University of Tokyo / 2008 - 2010
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 mb-16 md:mb-0"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      Master Degree
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      Harvard University / 2012 - 2015
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 px-4 md:ml-5">
+                  <h2
+                    class="text-white text-2xl font-medium mb-5 leading-tight"
+                  >
+                    Experience
+                  </h2>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      Software Engineer
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      Adobe / 2015 - 2017
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      Back-End Developer
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      Google / 2017 - 2018
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                  <div
+                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 mb-16 md:mb-0"
+                  >
+                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
+                      UI/UX Designer
+                    </h6>
+                    <p class="mb-2 text-neutral-400 text-sm leading-7">
+                      Discord / 2019 - Present
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-7">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Optio quo repudiandae.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- My Skills -->
+            <div class="mb-24 lg:mb-28">
+              <div class="mb-12">
+                <p class="mb-4 text-sm leading-7 text-neutral-400">
+                  My level of knowledge in some tools
+                </p>
+                <h2 class="text-white text-4xl font-bold">My Skills</h2>
+              </div>
+              <div class="-mx-4 grid grid-cols-2">
+                <div class="col-span-2 md:col-span-1 px-4">
+                  <div class="mb-10">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[95%]"
+                    >
+                      <span class="mr-3">HTML/CSS</span>
+                      <span class="">95%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[95%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-10">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[80%]"
+                    >
+                      <span class="mr-3">Web Design</span>
+                      <span class="">80%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[80%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-10 md:mb-0">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[90%]"
+                    >
+                      <span class="mr-3">Javascript</span>
+                      <span class="">90%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[90%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 px-4">
+                  <div class="mb-10">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[90%]"
+                    >
+                      <span class="mr-3">React JS</span>
+                      <span class="">90%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[90%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-10">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[95%]"
+                    >
+                      <span class="mr-3">Express.js</span>
+                      <span class="">95%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[95%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div
+                      class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[80%]"
+                    >
+                      <span class="mr-3">Typescript</span>
+                      <span class="">80%</span>
+                    </div>
+                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                      <div
+                        class="text-base h-2.5 w-[80%] bg-emerald-600 flex"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Office tour -->
+            <div class="-mx-4 grid grid-cols-2">
+              <div class="col-span-2 lg:col-span-1 px-4 mb-6 my-auto">
+                <h3 class="text-3xl mb-3 font-semibold leading-10">
+                  Take a tour of my office
+                </h3>
+                <p
+                  class="text-sm leading-7 text-neutral-400 mb-4 lg:leading-8 xl:text-base xl:leading-8"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                  cum quasi assumenda culpa praesentium consectetur voluptatibus
+                  expedita. Voluptatem tempore, aspernatur rem facilis,
+                  distinctio nemo! Odio velit, nemo dolorem voluptas!
+                </p>
+                <p
+                  class="text-sm leading-7 text-neutral-400 lg:leading-8 xl:text-base xl:leading-8"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Laudantium qui aspernatur unde mollitia, in laborum.
+                </p>
+              </div>
+              <div class="col-span-2 lg:col-span-1 px-4">
+                <a class="" href="https://www.youtube.com/watch?v=doteMqP6eSc">
+                  <div class="relative text-center z-10 overflow-hidden">
+                    <img
+                      src="./src/img/video.jpg"
+                      alt=""
+                      class="z-20 rounded-sm h-full w-full opacity-80"
+                    />
+                    <div
+                      class="absolute w-full h-full top-0 hover:scale-110 transition"
+                    >
+                      <div
+                        class="size-14 bg-white absolute left-1/2 top-1/2 box-content rounded-full -mx-8 -my-8 text-center"
+                      >
+                        <div class="w-full h-full flex align-middle">
+                          <img
+                            src="./src/img/play-button.png"
+                            alt=""
+                            class="m-auto size-4"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
