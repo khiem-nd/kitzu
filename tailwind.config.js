@@ -324,6 +324,9 @@ export default {
         closeBtnResume: "6vw",
         closeBtnAbout: "3vw",
       },
+      fontSize: {
+        title: "42px",
+      },
     },
   },
   plugins: [],
