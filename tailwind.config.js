@@ -279,7 +279,7 @@ export default {
         800: "#9f1239",
         900: "#881337",
       },
-      cover: "#111",
+      dark: "#111",
     }),
     extend: {
       keyframes: {
@@ -326,6 +326,9 @@ export default {
       },
       fontSize: {
         title: "42px",
+      },
+      backgroundPosition: {
+        "custom-x-center": "62% center",
       },
     },
   },
