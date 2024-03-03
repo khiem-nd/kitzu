@@ -147,7 +147,7 @@ export default {
         300: '#86efac',
         400: '#4ade80',
         500: '#22c55e',
-        600: '#16a34a',
+        600: '#009e66',
         700: '#15803d',
         800: '#166534',
         900: '#14532d',
@@ -309,6 +309,22 @@ export default {
             transform: 'translateX(calc(100% - 1px))',
           },
         },
+        zoomInImg: {
+          '0%': {
+            scale: '75%',
+          },
+          '100%': {
+            scale: '100%',
+          }
+        },
+        zoomOutImg: {
+          '0%': {
+            scale: '100%',
+          },
+          '100%': {
+            scale: '75%',
+          }
+        }
       },
       animation: {
         shine: 'shine 0.8s',
@@ -316,7 +332,12 @@ export default {
         'burger-hover-2': 'burgerHover 1s infinite ease-in-out alternate forwards 200ms',
         'burger-hover-4': 'burgerHover 1s infinite ease-in-out alternate forwards 400ms',
         'burger-hover-6': 'burgerHover 1s infinite ease-in-out alternate forwards 600ms',
-        animationBar: 'barMove 3s linear infinite forwards'
+        animationBar: 'barMove 3s linear infinite forwards',
+        'zoom-in-img': 'zoomInImg 0.07s linear forwards',
+        'zoom-out-img': 'zoomOutImg 0.07s linear forwards',
+      },
+      transition: {
+        
       },
       fontFamily: {
         'poppins':'Poppins'
