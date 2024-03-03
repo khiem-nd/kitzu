@@ -305,6 +305,22 @@ export default {
             transform: "translateX(calc(100% - 1px))",
           },
         },
+        zoomInImg: {
+          "0%": {
+            scale: "75%",
+          },
+          "100%": {
+            scale: "100%",
+          },
+        },
+        zoomOutImg: {
+          "0%": {
+            scale: "100%",
+          },
+          "100%": {
+            scale: "75%",
+          },
+        },
       },
       animation: {
         shine: "shine 0.8s",
@@ -316,6 +332,8 @@ export default {
         "burger-hover-6":
           "burgerHover 1s infinite ease-in-out alternate forwards 600ms",
         animationBar: "barMove 3s linear infinite forwards",
+        "zoom-in-img": "zoomInImg 0.07s linear forwards transition",
+        "zoom-out-img": "zoomOutImg 0.07s linear forwards transition",
       },
       fontFamily: {
         poppins: ["Poppins"],
@@ -324,6 +342,7 @@ export default {
         closeBtnResume: "6vw",
         closeBtnAbout: "3vw",
         closeBtnBlog: "4vw",
+        closeBtnPortfolio: "5vw",
       },
       fontSize: {
         title: "42px",
