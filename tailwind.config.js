@@ -323,6 +323,7 @@ export default {
       spacing: {
         closeBtnResume: "6vw",
         closeBtnAbout: "3vw",
+        closeBtnBlog: "4vw",
       },
       fontSize: {
         title: "42px",
