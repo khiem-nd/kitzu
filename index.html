@@ -29,7 +29,7 @@
     <!-- Home -->
     <section
       id="home"
-      class="bg-dark text-white font-normal text-base leading-7 overflow-hidden">
+      class="hidden bg-dark text-white font-normal text-base leading-7 overflow-hidden">
       <!-- Navbar -->
       <nav
         class="bg-transparent py-6 px-12 fixed left-0 right-0 top-0 z-50 md:flex md:flex-row justify-between flex text-white">
@@ -181,9 +181,7 @@
     </section>
 
     <!-- About -->
-    <section
-      id="about"
-      class="hidden sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white px-4">
+    <section id="about" class="hidden container mx-auto text-white px-4">
       <!-- Close button -->
       <div class="fixed top-5 right-closeBtnResume">
         <button type="button">
@@ -673,9 +671,7 @@
     </section>
 
     <!-- Resume -->
-    <section
-      id="resume"
-      class="hidden sm:max-w-[576px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto text-white px-4">
+    <section id="resume" class="hidden container mx-auto text-white px-4">
       <!-- Close button -->
       <div class="fixed top-5 right-closeBtnAbout">
         <button type="button">
@@ -936,9 +932,12 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="hidden text-neutral-400 leading-8">
+    <section
+      id="portfolio"
+      class="hidden container text-neutral-400 leading-8 content-center">
       <div
         class="sm:max-w-[640px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto">
+        <!-- Close button -->
         <div class="top-5 right-closeBtnPortfolio fixed z-40">
           <button class="text-white text-5xl">
             <ion-icon name="close-outline"></ion-icon>
@@ -1126,7 +1125,7 @@
           class="absolute flex w-full h-full items-center justify-center top-0 left-0">
           <img class="max-h-full img-item" src="src/img/item-3.jpg" alt="" />
         </div>
-        <div class="top-6 right-4 md:right-10 fixed z-40">
+        <div class="top-6 right-4 md:right-10 xl:right-16 fixed z-40">
           <button class="text-white text-3xl">
             <ion-icon name="close-outline"></ion-icon>
           </button>
@@ -1136,8 +1135,7 @@
 
     <!-- Blog -->
     <section id="blog" class="hidden text-neutral-400 leading-8">
-      <div
-        class="sm:max-w-[640px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto">
+      <div class="container mx-auto">
         <div class="top-5 right-closeBtnAbout fixed z-50">
           <button class="text-white text-5xl">
             <ion-icon name="close-outline"></ion-icon>
@@ -1337,8 +1335,7 @@
 
     <!-- Contact -->
     <section id="contact" class="hidden text-neutral-400 leading-8">
-      <div
-        class="sm:max-w-[640px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1200px] mx-auto">
+      <div class="container mx-auto">
         <div class="top-9 right-[4%] fixed z-50">
           <button class="text-white text-5xl">
             <ion-icon name="close-outline"></ion-icon>
@@ -1500,6 +1497,7 @@
     </section>
 
     <script type="module" src="/src/main.ts"></script>
+
     <!-- Swiperjs -->
     <script>
       var swiper = new Swiper(".mySwiper", {

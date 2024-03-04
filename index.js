@@ -20,14 +20,14 @@ document.addEventListener("click", (e) => {
 // Xóa lớp 'tqp-topmenu-expended' khi màn hình có kích thước từ md trở lên
 // const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-const handleMediaQueryChange = (e) => {
-  if (e.matches) {
-    removeExpendClass();
-  }
-};
+// const handleMediaQueryChange = (e) => {
+//   if (e.matches) {
+//     removeExpendClass();
+//   }
+// };
 
-mediaQuery.addListener(handleMediaQueryChange);
-handleMediaQueryChange(mediaQuery);
+// mediaQuery.addListener(handleMediaQueryChange);
+// handleMediaQueryChange(mediaQuery);
 const phrases = ["Developer", "Designer", "Freelancer"];
 const el = document.getElementById("typewriter");
 

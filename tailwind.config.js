@@ -350,6 +350,21 @@ export default {
       backgroundPosition: {
         "custom-x-center": "62% center",
       },
+      maxWidth: {
+        sm: "36rem", // 576px
+        md: "48rem", // 768px
+        lg: "62rem", // 992px
+        xl: "75rem", // 1200px
+      },
+      container: {
+        center: true,
+        screens: {
+          sm: "36rem",
+          md: "48rem",
+          lg: "62rem",
+          xl: "75rem",
+        },
+      },
     },
   },
   plugins: [],
