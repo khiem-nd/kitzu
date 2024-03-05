@@ -25,7 +25,6 @@ const handleMediaQueryChange = (e) => {
     removeExpendClass();
   }
 };
-
 mediaQuery.addListener(handleMediaQueryChange);
 handleMediaQueryChange(mediaQuery);
 const phrases = ["Developer", "Designer", "Freelancer"];
@@ -66,3 +65,24 @@ writeLoop();
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            enabled: true,
+            slidesPerView: 1,
+          },
+          // when window width is >= 768
+          768: {
+            enabled: true,
+            slidesPerView: 2,
+          },
+        },
+      });
+   
