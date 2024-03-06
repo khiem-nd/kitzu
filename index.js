@@ -1,32 +1,33 @@
-const topMenu = document.getElementById('top-menu');
-const toggleTopMenuIcon = document.getElementById('top-toggle');
+const topMenu = document.getElementById("top-menu");
+const toggleTopMenuIcon = document.getElementById("top-toggle");
 
-const removeExpendClass = () => {
-  if (topMenu.classList.contains('tqp-topmenu-expended')) {
-    topMenu.classList.remove('tqp-topmenu-expended');
-    topMenu.classList.add('hidden');
-  }
-};
+// const removeExpendClass = () => {
+//   if (topMenu.classList.contains("tqp-topmenu-expended")) {
+//     topMenu.classList.remove("tqp-topmenu-expended");
+//     topMenu.classList.add("hidden");
+//   }
+// };
 
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (toggleTopMenuIcon?.contains(e.target)) {
-    topMenu?.classList.toggle('tqp-topmenu-expended');
-    topMenu?.classList.toggle('hidden');
+    topMenu?.classList.toggle("tqp-topmenu-expended");
+    topMenu?.classList.toggle("hidden");
   } else {
     removeExpendClass();
   }
 });
 
 // Xóa lớp 'tqp-topmenu-expended' khi màn hình có kích thước từ md trở lên
-const mediaQuery = window.matchMedia('(min-width: 768px)'); // Điều chỉnh giá trị này tùy theo kích thước của bạn
+// const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-const handleMediaQueryChange = (e) => {
-  if (e.matches) {
-    removeExpendClass();
-  }
-};
-mediaQuery.addListener(handleMediaQueryChange);
-handleMediaQueryChange(mediaQuery);
+// const handleMediaQueryChange = (e) => {
+//   if (e.matches) {
+//     removeExpendClass();
+//   }
+// };
+
+// mediaQuery.addListener(handleMediaQueryChange);
+// handleMediaQueryChange(mediaQuery);
 const phrases = ["Developer", "Designer", "Freelancer"];
 const el = document.getElementById("typewriter");
 
@@ -64,25 +65,103 @@ writeLoop();
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Portfolio
+$(".grid-custom").isotope({
+  itemSelector: ".grid-item",
+  layoutMode: "fitRows",
+});
+
+$(document).ready(function () {
+  $(".filter-group").find("li").get(0).click();
+});
+
+$(".filter-group").on("click", "li", function () {
+  $(".filter-button")
+    .removeClass("text-green-600 border-b-green-600")
+    .addClass("border-b-neutral-900");
+  $(this)
+    .addClass("text-green-600 border-b-green-600")
+    .removeClass("border-b-neutral-900");
+  var filterValue = $(this).attr("data-filter") || "*";
+  filterValue = filterValue == "*" ? filterValue : "." + filterValue;
+  $(".grid-custom").isotope({ filter: filterValue });
+});
+
+$(".portfolio-item").on("click", function (e) {
+  e.preventDefault();
+  var imgElement = $(this).find("img").get(0).src;
+  document.body.style.overflow = "hidden";
+  $(".img-item").get(0).src = imgElement;
+  $(".container-item").removeClass("hidden");
+  $(".img-item").removeClass("animate-zoom-out-img");
+  $(".img-item").addClass("animate-zoom-in-img");
+});
+
+$("#close-zoom-img").on("click", function () {
+  closeZoomImg();
+});
+
+const closeZoomImg = () => {
+  $(".img-item").removeClass("animate-zoom-in-img");
+  $(".img-item").addClass("animate-zoom-out-img");
+  setTimeout(() => {
+    $(".container-item").addClass("hidden");
+    document.body.style.overflow = "auto";
+  }, 100);
 };
-      var swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        breakpoints: {
-          // when window width is >= 320px
-          320: {
-            enabled: true,
-            slidesPerView: 1,
-          },
-          // when window width is >= 768
-          768: {
-            enabled: true,
-            slidesPerView: 2,
-          },
-        },
-      });
-   
+
+      //   // Dữ liệu về các nhân vật
+      //   var cast = {
+      //     "characters": [
+      //         {
+      //             "icon": "logo-css3",
+      //             "name": "Design Trends",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+      //         {
+      //             "icon": "images",
+      //             "name": " PSD Design",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+      //         {
+      //             "icon": "logo-ionic",
+      //             "name": "Customer Support",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+      //         {
+      //             "icon": "logo-wordpress",
+      //             "name": "Web Development",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+      //         {
+      //             "icon": "move",
+      //             "name": " Fully Responsive",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+      //         {
+      //             "icon": "rocket-sharp",
+      //             "name": "Branding",
+      //             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                 
+      //         },
+              
+      //     ]
+      // }
+      
+      // $(document).ready(function(){
+      //     // Lấy mẫu HTML của nhân vật
+      //     var characterTemplate = $("#character-template").html();
+      
+      //     // Biên dịch mẫu Handlebars
+      //     var compiledCharacterTemplate = Handlebars.compile(characterTemplate);
+      
+      //     // Hiển thị dữ liệu của một nhân vật vào phần tử .character-list-container
+      //     $(".character-list-container").html(compiledCharacterTemplate(cast.characters[2]));
+      // });

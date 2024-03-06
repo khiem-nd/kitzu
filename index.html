@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet" />
     <script src="/index.js" type="module"></script>
@@ -355,103 +359,18 @@
                   </p>
                   <h2 class="text-white text-4xl font-bold">My Services</h2>
                 </div>
-                <div class="grid grid-cols-12 -mx-4">
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="logo-css3"
-                        size=""
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                        Design Trends
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
+                <div class="grid grid-cols-12 -mx-4 character-list-container">
+                  <script id="character-template" type="text/x-handlebars-template">
+                    {{#each characters}}
+                    <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                        <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                            <ion-icon name="{{icon}}" size="" class="mb-5 size-14 text-green-600"></ion-icon>
+                            <h6 class="mb-3 text-white font-medium text-xl leading-5">{{name}}</h6>
+                            <p class="text-neutral-400 text-sm leading-8">{{text}}</p>
+                        </div>
                     </div>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="images"
-                        size="large"
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                        PSD Design
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="logo-ionic"
-                        size="large"
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                        Customer Support
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="logo-wordpress"
-                        size="large"
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xlleading-5">
-                        Web Development
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="move"
-                        size="large"
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                        Fully Responsive
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                    <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                      <ion-icon
-                        name="rocket-sharp"
-                        size="large"
-                        class="mb-5 size-14 text-green-600"></ion-icon>
-                      <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                        Branding
-                      </h6>
-                      <p class="text-neutral-400 text-sm leading-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
+                    {{/each}}
+                </script>
                 </div>
               </div>
 
@@ -1577,7 +1496,50 @@
     </script>
 
     <script type="module" src="/src/main.ts"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      var cast = {
+          "characters": [
+              {
+                  "icon": "logo-css3",
+                  "name": "Design Trends",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              },
+              {
+                  "icon": "images",
+                  "name": "PSD Design",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              },
+              {
+                  "icon": "logo-ionic",
+                  "name": "Customer Support",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              },
+              {
+                  "icon": "logo-wordpress",
+                  "name": "Web Development",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              },
+              {
+                  "icon": "move",
+                  "name": "Fully Responsive",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              },
+              {
+                  "icon": "rocket-sharp",
+                  "name": "Branding",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+              }
+          ]
+      }
+  
+      $(document).ready(function(){
+          var source = $("#character-template").html();
+          var template = Handlebars.compile(source);
+          $(".character-list-container").html(template(cast));
+      });
+  </script>
     <!-- Swiperjs -->
     <script>
       var swiper = new Swiper(".mySwiper", {
