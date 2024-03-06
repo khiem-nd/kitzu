@@ -1122,169 +1122,37 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3">
-                  <div
-                    class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-1.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >11 Dec, 20</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            Top tools for Photographers
-                          </h5>
+                <div class="grid grid-cols-1 lg:grid-cols-3 blog-list-container">
+                  <script id="blog-template" type="text/x-handlebars-template">
+                    {{#each blogs}}
+                    <div class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
+                      <div class="mb-10 lg:mb-20">
+                        <a class="h-full relative" href="">
+                          <img
+                            class="w-full"
+                            src="{{image}}"
+                            alt="Blog post" />
+                          <span
+                            class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
+                            >{{date}}</span
+                          >
                         </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
+                        <div class="pt-3">
+                          <a>
+                            <h5 class="text-white text-xl font-semibold mb-1.5">
+                             {{title}}
+                            </h5>
+                          </a>
+                          <p class="text-sm leading-7">
+                            {{text}}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="text-left md: sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="md:mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-2.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >12 Aug, 20</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            Take a tour of my office
-                          </h5>
-                        </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="text-left md: sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="md:mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-3.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >4 Feb, 20</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            How i became a Web Designer
-                          </h5>
-                        </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="text-left md: sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="md:mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-4.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >11 Dec, 19</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            How to improve work performance
-                          </h5>
-                        </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="text-left md: sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="md:mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-5.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >15 Nov, 19</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            How to work from home
-                          </h5>
-                        </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="text-left md: sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                    <div class="border-none md:mb-10 lg:mb-20">
-                      <a class="h-full relative" href="">
-                        <img
-                          class="w-full"
-                          src="src/img/postblog-6.jpg"
-                          alt="Blog post" />
-                        <span
-                          class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                          >8 Aug, 19</span
-                        >
-                      </a>
-                      <div class="pt-3">
-                        <a>
-                          <h5 class="text-white text-xl font-semibold mb-1.5">
-                            How to enjoy your business trip
-                          </h5>
-                        </a>
-                        <p class="text-sm leading-7">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Dolore, porro rem quod illo quam, eum alias id,
-                          repellendus magni, quas.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                    {{/each}}
+                  </script>
+                  
+                  
                 </div>
               </div>
             </div>
@@ -1500,45 +1368,89 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
       var cast = {
-          "characters": [
-              {
-                  "icon": "logo-css3",
-                  "name": "Design Trends",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              },
-              {
-                  "icon": "images",
-                  "name": "PSD Design",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              },
-              {
-                  "icon": "logo-ionic",
-                  "name": "Customer Support",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              },
-              {
-                  "icon": "logo-wordpress",
-                  "name": "Web Development",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              },
-              {
-                  "icon": "move",
-                  "name": "Fully Responsive",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              },
-              {
-                  "icon": "rocket-sharp",
-                  "name": "Branding",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-              }
-          ]
-      }
-  
+    "characters": [
+        {
+            "icon": "logo-css3",
+            "name": "Design Trends",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        },
+        {
+            "icon": "images",
+            "name": "PSD Design",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        },
+        {
+            "icon": "logo-ionic",
+            "name": "Customer Support",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        },
+        {
+            "icon": "logo-wordpress",
+            "name": "Web Development",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        },
+        {
+            "icon": "move",
+            "name": "Fully Responsive",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        },
+        {
+            "icon": "rocket-sharp",
+            "name": "Branding",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        }
+    ],
+    "blogs": [
+        {
+            "image": "src/img/postblog-1.jpg",
+            "date": "11 Dec, 20",
+            "title": "Top tools for Photographers",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        },
+        {
+            "image": "src/img/postblog-2.jpg",
+            "date": "12 Aug, 20",
+            "title": "Take a tour of my office",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        },
+        {
+            "image": "src/img/postblog-3.jpg",
+            "date": "4 Feb, 20",
+            "title": "Top tools for Photographers",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        },
+        {
+            "image": "src/img/postblog-4.jpg",
+            "date": "11 Dec, 19",
+            "title": "How to improve work performance",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        },
+        {
+            "image": "src/img/postblog-5.jpg",
+            "date": "8 Aug, 19",
+            "title": "How to work from home",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        },
+        {
+            "image": "src/img/postblog-6.jpg",
+            "date": "11 Dec, 20",
+            "title": "How to enjoy your business trip",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+        }
+    ]
+};
+
       $(document).ready(function(){
+           //about
           var source = $("#character-template").html();
           var template = Handlebars.compile(source);
           $(".character-list-container").html(template(cast));
+          //blogs
+          var source = $("#blog-template").html();
+          var template = Handlebars.compile(source);
+          $(".blog-list-container").html(template(cast));
       });
+      
   </script>
     <!-- Swiperjs -->
     <script>
