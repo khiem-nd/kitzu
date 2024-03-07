@@ -111,3 +111,119 @@ const closeZoomImg = () => {
     document.body.style.overflow = "auto";
   }, 100);
 };
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          enabled: true,
+          slidesPerView: 1,
+        },
+        // when window width is >= 768
+        768: {
+          enabled: true,
+          slidesPerView: 2,
+        },
+      },
+    });
+    setTimeout(() => {
+      new LazyLoad({ callback_error: (el) => (el.src = 'https://via.placeholder.com/1x1/?text=') });
+    }, 1000);
+    $("#modalAbout").animatedModal({});
+
+    $("#modalResume").animatedModal();
+
+    $("#modalPortfolio").animatedModal();
+
+    $("#modalBlog").animatedModal();
+
+    $("#modalContact").animatedModal();
+
+    var cast = {
+      "characters": [
+          {
+              "icon": "logo-css3",
+              "name": "Design Trends",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          },
+          {
+              "icon": "images",
+              "name": "PSD Design",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          },
+          {
+              "icon": "logo-ionic",
+              "name": "Customer Support",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          },
+          {
+              "icon": "logo-wordpress",
+              "name": "Web Development",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          },
+          {
+              "icon": "move",
+              "name": "Fully Responsive",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          },
+          {
+              "icon": "rocket-sharp",
+              "name": "Branding",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          }
+      ],
+      "blogs": [
+          {
+              "image": "src/img/postblog-1.jpg",
+              "date": "11 Dec, 20",
+              "title": "Top tools for Photographers",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          },
+          {
+              "image": "src/img/postblog-2.jpg",
+              "date": "12 Aug, 20",
+              "title": "Take a tour of my office",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          },
+          {
+              "image": "src/img/postblog-3.jpg",
+              "date": "4 Feb, 20",
+              "title": "Top tools for Photographers",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          },
+          {
+              "image": "src/img/postblog-4.jpg",
+              "date": "11 Dec, 19",
+              "title": "How to improve work performance",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          },
+          {
+              "image": "src/img/postblog-5.jpg",
+              "date": "8 Aug, 19",
+              "title": "How to work from home",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          },
+          {
+              "image": "src/img/postblog-6.jpg",
+              "date": "11 Dec, 20",
+              "title": "How to enjoy your business trip",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas."
+          }
+      ]
+    };
+    
+        $(document).ready(function(){
+             //about
+            var source = $("#character-template").html();
+            var template = Handlebars.compile(source);
+            $(".character-list-container").html(template(cast));
+            //blogs
+            var source = $("#blog-template").html();
+            var template = Handlebars.compile(source);
+            $(".blog-list-container").html(template(cast));
+        });
