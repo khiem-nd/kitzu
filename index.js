@@ -92,7 +92,7 @@ $(".filter-group").on("click", "li", function () {
 $(".portfolio-item").on("click", function (e) {
   e.preventDefault();
   var imgElement = $(this).find("img").get(0).src;
-  document.body.style.overflow = "hidden";
+  $("#portfolio").get(0).style.overflow = "hidden"
   $(".img-item").get(0).src = imgElement;
   $(".container-item").removeClass("hidden");
   $(".img-item").removeClass("animate-zoom-out-img");
@@ -108,6 +108,6 @@ const closeZoomImg = () => {
   $(".img-item").addClass("animate-zoom-out-img");
   setTimeout(() => {
     $(".container-item").addClass("hidden");
-    document.body.style.overflow = "auto";
+    $("#portfolio").get(0).style.overflow = "auto"
   }, 100);
 };

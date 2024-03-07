@@ -321,6 +321,17 @@ export default {
             scale: "75%",
           },
         },
+        slideDown: {
+          "0%": {
+            transform: "rotateX(90deg)",
+          },
+          "70%": {
+            transform: "rotateX(20deg)",
+          },
+          "100%": {
+            transform: "rotateX(0deg)",
+          },
+        },
       },
       animation: {
         shine: "shine 0.8s",
@@ -334,6 +345,7 @@ export default {
         animationBar: "barMove 3s linear infinite forwards",
         "zoom-in-img": "zoomInImg 0.07s linear forwards transition",
         "zoom-out-img": "zoomOutImg 0.07s linear forwards transition",
+        slidedown: "slideDown 0.3s ease-in-out forwards",
       },
       fontFamily: {
         poppins: ["Poppins"],
@@ -343,6 +355,12 @@ export default {
         closeBtnAbout: "3vw",
         closeBtnBlog: "4vw",
         closeBtnPortfolio: "5vw",
+        pic1: "440px",
+        pic2: "430px",
+        per1: "95%",
+        per2: "90%",
+        per3: "85%",
+        per4: "80%",
       },
       fontSize: {
         title: "42px",
@@ -355,6 +373,7 @@ export default {
         md: "48rem", // 768px
         lg: "62rem", // 992px
         xl: "75rem", // 1200px
+        "2/3": "66%",
       },
       container: {
         center: true,

@@ -1,1094 +1,1171 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitzu - Personal Porfolio Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <script src="/index.js" type="module"></script>
+    <link rel="stylesheet" href="/index.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+  </head>
+  <body class="bg-dark content-center font-poppins">
+    <!-- Home -->
+    <section
+      id="home"
+      class="bg-dark text-white font-normal text-base leading-7 overflow-hidden">
+      <script id="handlebarsHome" type="text/x-handlebars-template">
+      <!-- Navbar -->
+      <nav
+        class="bg-transparent py-6 px-12 fixed left-0 right-0 top-0 z-50 md:flex md:flex-row justify-between flex text-white">
+        <a class="mr-4 py-1" href="#home-area">
+          <img
+            class="w-24 h-auto md:w-28"
+            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/img-kitzu-logo.png" />
+        </a>
+        <ul
+          id="top-menu"
+          class="py-2 hidden md:tqp-topmenu-expended md:flex md:items-center md:justify-end md:gap-7 font-light max-md:dropdown_menu-7">
+          {{#each button}}
+          <li class="cursor-pointer py-1">
+            <a id="modal{{name}}" href="#{{href}}">{{name}}</a>
+          </li>
+          {{/each}}
+        </ul>
+        <div
+          class="md:hidden max-md:justify-end max-md:flex cursor-pointer max-md:w-7 max-md:h-5 before:self-end before:w-5/6 before:h-0.5 before:bg-white before:content-end after:h-0.5 my-auto after:bg-white after:w-full flex flex-col after:self-end"
+          id="top-toggle">
+          <span
+            class="w-7/12 h-0.5 font-extrabold my-auto bg-white self-end"></span>
+        </div>
+      </nav>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kitzu - Personal Porfolio Template</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <script src="/index.js" type="module"></script>
-  <link rel="stylesheet" href="/index.css" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/src/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-  <link rel="stylesheet" href="src/css/normalize.min.css" />
-  <link rel="stylesheet" href="src/css/animate.min.css" />
-</head>
-
-<body class="bg-dark content-center font-poppins">
-  <!-- Home -->
-  <section id="home" class="bg-dark text-white font-normal text-base leading-7 overflow-hidden">
-    <!-- Navbar -->
-    <nav
-      class="bg-transparent py-6 px-12 fixed left-0 right-0 top-0 z-50 md:flex md:flex-row justify-between flex text-white">
-      <a class="mr-4 py-1" href="#home-area">
-        <img class="w-24 h-auto md:w-28"
-          src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/img-kitzu-logo.png" />
-      </a>
-      <ul id="top-menu"
-        class="py-2 hidden md:tqp-topmenu-expended md:flex md:items-center md:justify-end md:gap-7 font-light">
-        <li class="cursor-pointer py-1">
-          <a id="modalAbout" href="#about">About</a>
-        </li>
-        <li class="py-1">
-          <a id="modalResume" href="#resume">Resume</a>
-        </li>
-        <li class="py-1">
-          <a id="modalPortfolio" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="py-1">
-          <a id="modalBlog" href="#blog">Blog</a>
-        </li>
-        <li class="py-1">
-          <a id="modalContact" href="#contact">Contact</a>
-        </li>
-      </ul>
+      <!-- background -->
       <div
-        class="md:hidden max-md:justify-end max-md:flex cursor-pointer max-md:w-7 max-md:h-5 before:self-end before:w-5/6 before:h-0.5 before:bg-white before:content-end after:h-0.5 my-auto after:bg-white after:w-full flex flex-col after:self-end"
-        id="top-toggle">
-        <span class="w-7/12 h-0.5 font-extrabold my-auto bg-white self-end"></span>
-      </div>
-    </nav>
-
-    <!-- background -->
-    <div class="h-screen bg-cover bg-center opacity-50 max-md:bg-custom-x-center" style="
+        class="h-screen bg-cover bg-center opacity-50 max-md:bg-custom-x-center"
+        style="
           background-image: url(https://kaleidoscopic-pie-2341a3.netlify.app/template/img/home.jpg);
         "></div>
-    <div>
-      <div class="absolute inset-0 flex flex-col items-center justify-center">
-        <h1 class="text-white text-5xl md:text-6xl font-bold mb-8 text-center">
-          Emma Smith
-        </h1>
-        <h1 class="text-3xl text-center">
-          I'm a
-          <span id="typewriter" class="text-center"></span><span id="cursor">|</span>
-        </h1>
-      </div>
-      <!-- Language and Link -->
-      <div class="flex justify-between items-end h-screen py-10 px-10 absolute inset-0">
-        <div class="max-md:hidden">
-          <ul class="">
-            <li class="transform rotate-90 py-2 text-white">
-              <a href="#0" class=""><span class="">ENG</span></a>
-            </li>
-            <li class="transform rotate-90 py-2 text-white">
-              <a href="#0"><span class="">JAP</span></a>
-            </li>
-          </ul>
+      <div class="">
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <h1
+            class="text-white text-5xl md:text-6xl font-bold mb-8 text-center">
+            Emma Smith
+          </h1>
+          <h1 class="text-3xl text-center">
+            I'm a
+            <span id="typewriter" class="text-center"></span
+            ><span id="cursor">|</span>
+          </h1>
         </div>
-        <div class="max-md:hidden">
-          <ul>
-            <li class="py-2 text-white">
-              <a href="#0">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21.21" height="23" viewBox="0 0 50 50"
-                  fill="#fff">
-                  <path
-                    d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z">
-                  </path>
-                </svg>
-              </a>
-            </li>
-            <li class="py-2 text-white">
-              <a href="#0"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21.21" height="23"
-                  viewBox="0 0 50 50" fill="#fff">
-                  <path
-                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z">
-                  </path>
-                </svg>
-              </a>
-            </li>
-            <li class="py-2 text-white">
-              <a href="#0"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21.21" height="23"
-                  viewBox="0 0 30 30" fill="#fff">
-                  <path
-                    d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z">
-                  </path>
-                </svg>
-              </a>
-            </li>
-            <li class="py-2 text-white">
-              <a href="#0"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21.21" height="23"
-                  viewBox="0 0 30 30" fill="#fff">
-                  <path
-                    d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z">
-                  </path>
-                </svg>
-              </a>
-            </li>
-            <li class="py-2 text-white">
-              <a href="#0"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21.21" height="23"
-                  viewBox="0 0 30 30" fill="#fff">
-                  <path
-                    d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z">
-                  </path>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="text-white px-4">
-    <!-- Close button -->
-    <div class="fixed top-5 right-closeBtnResume close-about" id="btn-close-modal">
-      <button type="button">
-        <ion-icon name="close-outline" class="size-11"></ion-icon>
-      </button>
-    </div>
-
-    <!-- Contents -->
-    <div class="container mx-auto">
-      <div class="-mx-4 modal-content">
-        <div class="px-4">
-          <div class="my-16">
-            <!-- About me -->
-            <div class="text-center">
-              <div class="mb-20">
-                <div class="mb-20">
-                  <p class="mb-4 text-neutral-400 text-sm">Get to know me</p>
-                  <p class="mb-9 text-4xl md:text-title lg:text-5xl font-bold">
-                    About Me
-                  </p>
-                  <!-- Running bar -->
-                  <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
-                      <div class="w-1 h-1 bg-black absolute"></div>
-                    </div>
-                    <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
-                      <div class="w-1 h-1 bg-black absolute"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Who am i -->
-            <div class="mb-24 pb-12 md:pb-0 lg:mb-28">
-              <div class="-mx-4 grid grid-cols-12">
-                <div class="col-span-12 lg:col-span-5 px-4">
-                  <img
-                    class="p-1 rounded-full size-48 md:size-60 mx-auto mb-8 object-cover lg:size-auto lg:h-[440px] lg:w-full lg:rounded-none lg:p-1 lg:mb-0 xl:w-[430px] xl:mx-0 xl:h-auto"
-                    src="./src/img/info-img.jpg" alt="About Picture" />
-                </div>
-                <div class="col-span-12 lg:col-span-7 lg:flex">
-                  <div class="px-4 m-auto">
-                    <h2 class="text-green-600 text-lg lg:text-2xl mb-4 lg:max-xl:hidden">
-                      Who am i?
-                    </h2>
-                    <h6
-                      class="text-xl leading-relaxed md:text-2xl md:leading-10 xl:text-3xl xl:leading-relaxed font-bold mb-4">
-                      I'm Emma Smith, a visual UX/UI Designer and Web
-                      Developer
-                    </h6>
-                    <p
-                      class="text-neutral-400 leading-loose text-sm pb-7 border-b-2 border-white border-opacity-10 lg:pb-5 xl:pb-7 xl:leading-7">
-                      I am a freelancer based in the United Kingdom and i have
-                      been building noteworthy UX/UI designs and websites for
-                      years, which comply with the latest design trends. I
-                      help convert a vision and an idea into meaningful and
-                      useful products. Having a sharp eye for product
-                      evolution helps me prioritize tasks, iterate fast and
-                      deliver faster.
-                    </p>
-                    <div class="py-6 lg:mb-1 lg:py-5 xl:py-7">
-                      <div class="grid grid-cols-2 -mx-4">
-                        <div class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7">
-                          <span class="font-normal text-gray-300 mr-2.5">Name:</span>
-                          <p class="inline-block text-neutral-400">
-                            Emma Smith
-                          </p>
-                        </div>
-                        <div class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7">
-                          <span class="font-normal text-gray-300 mr-2.5">Email:</span>
-                          <p class="inline-block text-green-600 hover:text-green-900 transition">
-                            <a href="mailto:emma@example.com">emma@example.com</a>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="grid grid-cols-2 md:mb-0 -mx-4">
-                        <div class="text-sm px-4 col-span-2 mb-2.5 md:mb-0 md:col-span-1 leading-7">
-                          <span class="font-normal text-gray-300 mr-2.5">Age:</span>
-                          <p class="inline-block text-neutral-400">21</p>
-                        </div>
-                        <div class="text-sm px-4 col-span-2 md:col-span-1 leading-7">
-                          <span class="font-normal text-gray-300 mr-2.5">From:</span>
-                          <p class="inline-block text-neutral-400">
-                            Liverpool, UK
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="lg:flex">
-                      <button type="button"
-                        class="mb-7 mr-6 px-9 py-2.5 md:mb-0 lg:mb-0 bg-green-600 border-solid rounded-3xl text-sm focus:bg-green-900 transition">
-                        Download CV
-                      </button>
-                      <ul
-                        class="inline-flex before:border before:border-white before:w-14 before:h-0.5 before:opacity-30 before:mr-6 before:my-auto">
-                        <li class="mr-2.5 text-xl my-auto">
-                          <a href="#0" class="focus:text-green-600 transition"><ion-icon name="logo-twitter"
-                              class="opacity-80"></ion-icon></a>
-                        </li>
-                        <li class="mr-2.5 text-xl my-auto">
-                          <a href="#0" class="focus:text-green-600 transition"><ion-icon name="logo-instagram"
-                              class="opacity-80"></ion-icon></a>
-                        </li>
-                        <li class="mr-2.5 text-xl my-auto">
-                          <a href="#0" class="focus:text-green-600 transition"><ion-icon name="logo-linkedin"
-                              class="opacity-80"></ion-icon></a>
-                        </li>
-                        <li class="mr-2.5 text-xl my-auto">
-                          <a href="#0" class="focus:text-green-600 transition"><ion-icon name="logo-github"
-                              class="opacity-80"></ion-icon></a>
-                        </li>
-                        <li class="mr-2.5 text-xl my-auto">
-                          <a href="#0" class="focus:text-green-600 transition"><ion-icon name="logo-facebook"
-                              class="opacity-80"></ion-icon></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Service -->
-            <div class="mb-24 lg:mb-28">
-              <div class="mb-14">
-                <p class="mb-4 text-sm leading-7 text-neutral-400">
-                  Services i offer to my clients
-                </p>
-                <h2 class="text-white text-4xl font-bold">My Services</h2>
-              </div>
-              <div class="grid grid-cols-12 -mx-4">
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="logo-css3" size="" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                      Design Trends
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="images" size="large" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                      PSD Design
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="logo-ionic" size="large" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                      Customer Support
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="logo-wordpress" size="large" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xlleading-5">
-                      Web Development
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="move" size="large" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                      Fully Responsive
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
-                  <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="rocket-sharp" size="large" class="mb-5 size-14 text-green-600"></ion-icon>
-                    <h6 class="mb-3 text-white font-medium text-xl leading-5">
-                      Branding
-                    </h6>
-                    <p class="text-neutral-400 text-sm leading-8">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial -->
-            <div class="mb-24 lg:mb-28">
-              <div class="mb-12">
-                <p class="mb-4 text-sm text-neutral-400 leading-7">
-                  What my clients think about me
-                </p>
-                <h2 class="text-4xl text-white font-bold">Testimonials</h2>
-              </div>
-              <div class="swiper mySwiper -mr-7">
-                <div class="swiper-wrapper w-0">
-                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
-                    <div class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15">
-                      <div class="mb-6 flex justify-between">
-                        <div class="flex">
-                          <img class="mr-3.5 rounded-full size-14"
-                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-2.jpg" alt="Client" />
-                          <div class="my-auto">
-                            <h6 class="mb-2">John Santana</h6>
-                            <p class="text-neutral-400 leading-3">
-                              Entrepreneur
-                            </p>
-                          </div>
-                        </div>
-                        <div class="">
-                          <img src="./src//img/quotation.png" alt="quotation" class="size-12" />
-                        </div>
-                      </div>
-                      <p class="text-sm text-neutral-400 leading-7">
-                        Emma did an excellent creative job, addressing our
-                        request quickly, and also providing her own graphic
-                        insight, being open to feedback and changes or edits
-                        when they arose. She worked with us the entire way.
-                        Highly recommended.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
-                    <div class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15">
-                      <div class="mb-6 flex justify-between">
-                        <div class="flex">
-                          <img class="mr-3.5 rounded-full size-14"
-                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-3.jpg" alt="Client" />
-                          <div class="my-auto">
-                            <h6 class="mb-2">Maria Wilson</h6>
-                            <p class="text-neutral-400 leading-3">
-                              Envato Customer
-                            </p>
-                          </div>
-                        </div>
-                        <div class="">
-                          <img src="./src//img/quotation.png" alt="quotation" class="size-12" />
-                        </div>
-                      </div>
-                      <p class="text-sm text-neutral-400 leading-7">
-                        Emma did an excellent creative job, addressing our
-                        request quickly, and also providing her own graphic
-                        insight, being open to feedback and changes or edits
-                        when they arose. She worked with us the entire way.
-                        Highly recommended.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide overflow-hidden pr-7 text-sm">
-                    <div class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15">
-                      <div class="mb-6 flex justify-between">
-                        <div class="flex">
-                          <img class="mr-3.5 rounded-full size-14"
-                            src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-1.jpg" alt="Client" />
-                          <div class="my-auto">
-                            <h6 class="mb-2">Julia Sakura</h6>
-                            <p class="text-neutral-400 leading-3">
-                              Envato Customer
-                            </p>
-                          </div>
-                        </div>
-                        <div class="">
-                          <img src="./src//img/quotation.png" alt="quotation" class="size-12" />
-                        </div>
-                      </div>
-                      <p class="text-sm text-neutral-400 leading-7">
-                        Emma did an excellent creative job, addressing our
-                        request quickly, and also providing her own graphic
-                        insight, being open to feedback and changes or edits
-                        when they arose. She worked with us the entire way.
-                        Highly recommended.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="swiper-pagination relative mt-7 size-7"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Plan -->
-            <div class="">
-              <div class="-mx-4">
-                <div class="px-4">
-                  <div class="mb-12">
-                    <p class="mb-4 text-sm text-neutral-400 leading-7">
-                      Get started with my services
-                    </p>
-                    <h2 class="text-4xl text-white font-bold">
-                      Choose a Plan
-                    </h2>
-                  </div>
-                </div>
-              </div>
-              <div class="-mx-4 grid grid-cols-3">
-                <div class="px-4 col-span-3 lg:col-span-1">
-                  <div class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="egg" class="text-green-600 size-14 mb-7"></ion-icon>
-                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
-                      Standard
-                    </h3>
-                    <h2 class="mb-5 text-2xl font-light text-slate-100">
-                      $19/month
-                    </h2>
-                    <ul class="mb-4 text-sm">
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Mobile App Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Responsive Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Database Development
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Web Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        24/7 Support
-                      </li>
-                    </ul>
-                    <button type="button"
-                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm">
-                      Get Standard
-                    </button>
-                  </div>
-                </div>
-                <div class="px-4 col-span-3 lg:col-span-1">
-                  <div class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="rocket-sharp" class="text-green-600 size-14 mb-7"></ion-icon>
-                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
-                      Professional
-                    </h3>
-                    <h2 class="mb-5 text-2xl font-light text-slate-100">
-                      $29/month
-                    </h2>
-                    <ul class="mb-4 text-sm">
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Mobile App Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Responsive Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Database Development
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Web Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        24/7 Support
-                      </li>
-                    </ul>
-                    <button type="button"
-                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm">
-                      Get Pro
-                    </button>
-                  </div>
-                </div>
-                <div class="px-4 col-span-3 lg:col-span-1">
-                  <div class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15">
-                    <ion-icon name="logo-ionic" class="text-green-600 size-14 mb-7"></ion-icon>
-                    <h3 class="mb-3.5 text-2xl font-bold leading-5">
-                      Business
-                    </h3>
-                    <h2 class="mb-5 text-2xl font-light text-slate-100">
-                      $19/month
-                    </h2>
-                    <ul class="mb-4 text-sm">
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Mobile App Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Responsive Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Database Development
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        Web Design
-                      </li>
-                      <li class="p-2 text-neutral-400 leading-7">
-                        24/7 Support
-                      </li>
-                    </ul>
-                    <button type="button"
-                      class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm">
-                      Get Business
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <!-- Language and Media -->
+        <div
+          class="flex justify-between items-end h-screen py-10 px-10 absolute inset-0">
+          <div class="max-md:hidden">
+            <ul class="">
+              {{#each languages}}
+              <li class="transform rotate-90 py-2 text-white">
+                <a href="#{{hreflanguage}}" class=""><span class="">{{language}}</span></a>
+              </li>
+              {{/each}}
+            </ul>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="text-white px-4">
-    <!-- Close button -->
-    <div class="fixed top-5 right-closeBtnAbout close-resume">
-      <button type="button">
-        <ion-icon name="close-outline" class="size-11"></ion-icon>
-      </button>
-    </div>
-
-    <!-- Contents -->
-    <div class="container mx-auto">
-      <div class="-mx-4 modal-content">
-        <div class="px-4">
-          <div class="my-16">
-            <!-- Check out my Resume -->
-            <div class="text-center">
-              <div class="mb-20">
-                <div class="mb-20">
-                  <p class="mb-4 text-neutral-400 text-sm">
-                    Check out my Resume
-                  </p>
-                  <p class="mb-9 text-4xl md:text-title lg:text-5xl font-bold">
-                    Resume
-                  </p>
-                  <!-- Running bar -->
-                  <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
-                      <div class="w-1 h-1 bg-black absolute"></div>
-                    </div>
-                    <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
-                      <div class="w-1 h-1 bg-black absolute"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Education and Experiene -->
-            <div class="mb-24 lg:mb-28">
-              <div class="-mx-4 grid grid-cols-2">
-                <div class="col-span-2 md:col-span-1 px-4 md:mr-5">
-                  <h2 class="text-white text-2xl font-medium mb-5 leading-tight">
-                    Education
-                  </h2>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      Computer Science
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      Cambridge University / 2004 - 2007
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      Bachelor Degree
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      University of Tokyo / 2008 - 2010
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 mb-16 md:mb-0">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      Master Degree
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      Harvard University / 2012 - 2015
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-span-2 md:col-span-1 px-4 md:ml-5">
-                  <h2 class="text-white text-2xl font-medium mb-5 leading-tight">
-                    Experience
-                  </h2>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      Software Engineer
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      Adobe / 2015 - 2017
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      Back-End Developer
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      Google / 2017 - 2018
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                  <div
-                    class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 mb-16 md:mb-0">
-                    <h6 class="mb-2 text-white font-medium text-xl leading-5">
-                      UI/UX Designer
-                    </h6>
-                    <p class="mb-2 text-neutral-400 text-sm leading-7">
-                      Discord / 2019 - Present
-                    </p>
-                    <p class="text-neutral-400 text-sm leading-7">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit. Optio quo repudiandae.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- My Skills -->
-            <div class="mb-24 lg:mb-28">
-              <div class="mb-12">
-                <p class="mb-4 text-sm leading-7 text-neutral-400">
-                  My level of knowledge in some tools
-                </p>
-                <h2 class="text-white text-4xl font-bold">My Skills</h2>
-              </div>
-              <div class="-mx-4 grid grid-cols-2">
-                <div class="col-span-2 md:col-span-1 px-4">
-                  <div class="mb-10">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[95%]">
-                      <span class="mr-3">HTML/CSS</span>
-                      <span class="">95%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[95%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                  <div class="mb-10">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[80%]">
-                      <span class="mr-3">Web Design</span>
-                      <span class="">80%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[80%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                  <div class="mb-10 md:mb-0">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[90%]">
-                      <span class="mr-3">Javascript</span>
-                      <span class="">90%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[90%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-span-2 md:col-span-1 px-4">
-                  <div class="mb-10">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[90%]">
-                      <span class="mr-3">React JS</span>
-                      <span class="">90%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[90%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                  <div class="mb-10">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[95%]">
-                      <span class="mr-3">Express.js</span>
-                      <span class="">95%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[95%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[80%]">
-                      <span class="mr-3">Typescript</span>
-                      <span class="">80%</span>
-                    </div>
-                    <div class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
-                      <div class="text-base h-2.5 w-[80%] bg-emerald-600 flex"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Office tour -->
-            <div class="-mx-4 grid grid-cols-2">
-              <div class="col-span-2 lg:col-span-1 px-4 mb-6 my-auto">
-                <h3 class="text-3xl mb-3 font-semibold leading-10">
-                  Take a tour of my office
-                </h3>
-                <p class="text-sm leading-7 text-neutral-400 mb-4 lg:leading-8 xl:text-base xl:leading-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Quia cum quasi assumenda culpa praesentium consectetur
-                  voluptatibus expedita. Voluptatem tempore, aspernatur rem
-                  facilis, distinctio nemo! Odio velit, nemo dolorem voluptas!
-                </p>
-                <p class="text-sm leading-7 text-neutral-400 lg:leading-8 xl:text-base xl:leading-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Laudantium qui aspernatur unde mollitia, in laborum.
-                </p>
-              </div>
-              <div class="col-span-2 lg:col-span-1 px-4">
-                <a class="" href="https://www.youtube.com/watch?v=doteMqP6eSc">
-                  <div class="relative text-center z-10 overflow-hidden">
-                    <img src="./src/img/video.jpg" alt="" class="z-20 rounded-sm h-full w-full opacity-80" />
-                    <div class="absolute w-full h-full top-0 hover:scale-110 transition">
-                      <div
-                        class="size-14 bg-white absolute left-1/2 top-1/2 box-content rounded-full -mx-8 -my-8 text-center">
-                        <div class="w-full h-full flex align-middle">
-                          <img src="./src/img/play-button.png" alt="" class="m-auto size-4" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div class="max-md:hidden">
+            <ul>
+              {{#each media}}
+              <li class="py-2 text-white">
+                <a href="#{{hrefmedia}}">
+                  {{{svg}}}
                 </a>
-              </div>
-            </div>
+              </li>
+              {{/each}}
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </script>
+    <div id="handlebarsHome-output"></div>
+    </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="text-neutral-400 leading-8 content-center">
-
-    <div class="mx-auto">
+    <!-- About -->
+    <section id="about" class="text-white px-4">
       <!-- Close button -->
-      <div class="top-5 right-closeBtnPortfolio fixed z-40 close-portfolio">
-        <button class="text-white text-5xl">
-          <ion-icon name="close-outline"></ion-icon>
+      <div
+        class="fixed top-5 right-closeBtnResume close-about"
+        id="btn-close-modal">
+        <button type="button">
+          <ion-icon name="close-outline" class="size-11"></ion-icon>
         </button>
       </div>
+
       <!-- Contents -->
-      <script id="portfolio-handlebars" type="text/x-handlebars-template">
-      <div class="container mx-auto">
-        <div class="px-4 modal-content">
-          <div class="-mx-4">
-            <div class="my-20">
-              <div class="w-full mx-auto">
-                <!-- Showcase -->
-                <div class="mb-20 text-center">
-                  <p class="mb-4 text-base">
-                    Showcasing some of my best work
-                  </p>
-                  <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
-                    Portfolio
-                  </h2>
-                  <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
-                    <div class="square-container absolute top-0 left-0 w-full h-full animate-animationBar">
-                      <div class="square w-1 h-1 bg-black absolute"></div>
-                    </div>
-                    <div class="square-container absolute top-0 left-2 w-full h-full animate-animationBar">
-                      <div class="square w-1 h-1 bg-black absolute"></div>
+      <script id="handleAbout" type="text/x-handlebars-template">
+        <div class="container mx-auto">
+          <div class="-mx-4 modal-content">
+            <div class="px-4">
+              <div class="my-16">
+                <!-- About me -->
+                <div class="text-center">
+                  <div class="mb-20">
+                    <div class="mb-20">
+                      <p class="mb-4 text-neutral-400 text-sm">Get to know me</p>
+                      <p
+                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold"
+                      >
+                        About Me
+                      </p>
+                      <!-- Running bar -->
+                      <div
+                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
+                      >
+                        <div
+                          class="absolute top-0 left-0 w-full h-full animate-animationBar"
+                        >
+                          <div class="w-1 h-1 bg-black absolute"></div>
+                        </div>
+                        <div
+                          class="absolute top-0 left-2 w-full h-full animate-animationBar"
+                        >
+                          <div class="w-1 h-1 bg-black absolute"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <!-- Filter -->
-                <div>
-                  <div class="-mx-4 text-center">
-                    <div class="px-4 text-base leading-8">
-                      <ul class="mb-4 filter-group">
-                        {{#each filterButton}}
-                        <li data-filter={{dataFilter}}
-                          class="mr-4 inline-block border-b border-b-neutral-900 hover:text-green-600 hover:border-b-green-600 hover:cursor-pointer transition duration-100 ease-in-out filter-button">
-                          {{nameFilter}}
+
+                <!-- Who am i -->
+                <div class="mb-24 pb-12 md:pb-0 lg:mb-28">
+                  <div class="-mx-4 grid grid-cols-12">
+                    <div class="col-span-12 lg:col-span-5 px-4">
+                      <img
+                        class="p-1 rounded-full size-48 md:size-60 mx-auto mb-8 object-cover lg:size-auto lg:h-pic1 lg:w-full lg:rounded-none lg:p-1 lg:mb-0 xl:w-pic2 xl:mx-0 xl:h-auto"
+                        src="./src/img/info-img.jpg"
+                        alt="About Picture"
+                      />
+                    </div>
+                    <div class="col-span-12 lg:col-span-7 lg:flex">
+                      <div class="px-4 m-auto">
+                        <h2
+                          class="text-green-600 text-lg lg:text-2xl mb-4 lg:max-xl:hidden"
+                        >
+                          Who am i?
+                        </h2>
+                        <h6
+                          class="text-xl leading-relaxed md:text-2xl md:leading-10 xl:text-3xl xl:leading-relaxed font-bold mb-4"
+                        >
+                          I'm Emma Smith, a visual UX/UI Designer and Web
+                          Developer
+                        </h6>
+                        <p
+                          class="text-neutral-400 leading-loose text-sm pb-7 border-b-2 border-white border-opacity-10 lg:pb-5 xl:pb-7 xl:leading-7"
+                        >
+                          I am a freelancer based in the United Kingdom and i
+                          have been building noteworthy UX/UI designs and
+                          websites for years, which comply with the latest
+                          design trends. I help convert a vision and an idea
+                          into meaningful and useful products. Having a sharp
+                          eye for product evolution helps me prioritize tasks,
+                          iterate fast and deliver faster.
+                        </p>
+                        <div class="py-6 lg:mb-1 lg:py-5 xl:py-7">
+                          <div class="grid grid-cols-2 -mx-4">
+                            <div
+                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
+                            >
+                              <span
+                                class="font-normal text-gray-300 mr-2.5"
+                              >Name:</span>
+                              <p class="inline-block text-neutral-400">
+                                Emma Smith
+                              </p>
+                            </div>
+                            <div
+                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
+                            >
+                              <span
+                                class="font-normal text-gray-300 mr-2.5"
+                              >Email:</span>
+                              <p
+                                class="inline-block text-green-600 hover:text-green-900 transition"
+                              >
+                                <a
+                                  href="mailto:emma@example.com"
+                                >emma@example.com</a>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="grid grid-cols-2 md:mb-0 -mx-4">
+                            <div
+                              class="text-sm px-4 col-span-2 mb-2.5 md:mb-0 md:col-span-1 leading-7"
+                            >
+                              <span
+                                class="font-normal text-gray-300 mr-2.5"
+                              >Age:</span>
+                              <p class="inline-block text-neutral-400">21</p>
+                            </div>
+                            <div
+                              class="text-sm px-4 col-span-2 md:col-span-1 leading-7"
+                            >
+                              <span
+                                class="font-normal text-gray-300 mr-2.5"
+                              >From:</span>
+                              <p class="inline-block text-neutral-400">
+                                Liverpool, UK
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="lg:flex">
+                          <button
+                            type="button"
+                            class="mb-7 mr-6 px-9 py-2.5 md:mb-0 lg:mb-0 bg-green-600 border-solid rounded-3xl text-sm focus:bg-green-900 transition"
+                          >
+                            Download CV
+                          </button>
+                          <ul
+                            class="inline-flex before:border before:border-white before:w-14 before:h-0.5 before:opacity-30 before:mr-6 before:my-auto"
+                          >
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
+                              ><ion-icon
+                                  name="logo-twitter"
+                                  class="opacity-80"
+                                ></ion-icon></a>
+                            </li>
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
+                              ><ion-icon
+                                  name="logo-instagram"
+                                  class="opacity-80"
+                                ></ion-icon></a>
+                            </li>
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
+                              ><ion-icon
+                                  name="logo-linkedin"
+                                  class="opacity-80"
+                                ></ion-icon></a>
+                            </li>
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
+                              ><ion-icon
+                                  name="logo-github"
+                                  class="opacity-80"
+                                ></ion-icon></a>
+                            </li>
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
+                              ><ion-icon
+                                  name="logo-facebook"
+                                  class="opacity-80"
+                                ></ion-icon></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Service -->
+                <div class="mb-24 lg:mb-28">
+                  <div class="mb-14">
+                    <p class="mb-4 text-sm leading-7 text-neutral-400">
+                      Services i offer to my clients
+                    </p>
+                    <h2 class="text-white text-4xl font-bold">My Services</h2>
+                  </div>
+                  <div class="grid grid-cols-12 -mx-4">
+                    {{#each services}}
+                      <div
+                        class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7"
+                      >
+                        <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                          <ion-icon
+                            name="{{icon}}"
+                            size="large"
+                            class="mb-5 size-14 text-green-600"
+                          ></ion-icon>
+                          <h6
+                            class="mb-3 text-white font-medium text-xl leading-5"
+                          >
+                            {{name}}
+                          </h6>
+                          <p
+                            class="text-neutral-400 text-sm leading-8"
+                          >{{text}}</p>
+                        </div>
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>
+
+                <!-- Testimonial -->
+                <div class="mb-24 lg:mb-28">
+                  <div class="mb-12">
+                    <p class="mb-4 text-sm text-neutral-400 leading-7">
+                      What my clients think about me
+                    </p>
+                    <h2 class="text-4xl text-white font-bold">Testimonials</h2>
+                  </div>
+                  <div class="swiper mySwiper -mr-7">
+                    <div class="swiper-wrapper">
+                      {{#each testimonials}}
+                        <div class="swiper-slide overflow-hidden pr-7 text-sm">
+                          <div
+                            class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15"
+                          >
+                            <div class="mb-6 flex justify-between">
+                              <div class="flex">
+                                <img
+                                  class="mr-3.5 rounded-full size-14"
+                                  src="{{img}}"
+                                  alt=""
+                                />
+                                <div class="my-auto">
+                                  <h6 class="mb-2">{{name}}</h6>
+                                  <p class="text-neutral-400 leading-3">
+                                    {{customer}}
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="">
+                                <img
+                                  src="./src//img/quotation.png"
+                                  alt="quotation"
+                                  class="size-12"
+                                />
+                              </div>
+                            </div>
+                            <p class="text-sm text-neutral-400 leading-7">
+                              Emma did an excellent creative job, addressing our
+                              request quickly, and also providing her own
+                              graphic insight, being open to feedback and
+                              changes or edits when they arose. She worked with
+                              us the entire way. Highly recommended.
+                            </p>
+                          </div>
+                        </div>
+                      {{/each}}
+                    </div>
+                    <div>
+                      <div class="swiper-pagination relative mt-7 size-7"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Plan -->
+                <div class="">
+                  <div class="-mx-4">
+                    <div class="px-4">
+                      <div class="mb-12">
+                        <p class="mb-4 text-sm text-neutral-400 leading-7">
+                          Get started with my services
+                        </p>
+                        <h2 class="text-4xl text-white font-bold">
+                          Choose a Plan
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="-mx-4 grid grid-cols-3">
+                    {{#each plan}}
+                      <div class="px-4 col-span-3 lg:col-span-1">
+                        <div
+                          class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15"
+                        >
+                          <ion-icon
+                            name="{{img}}"
+                            class="text-green-600 size-14 mb-7"
+                          ></ion-icon>
+                          <h3 class="mb-3.5 text-2xl font-bold leading-5">
+                            {{package}}
+                          </h3>
+                          <h2 class="mb-5 text-2xl font-light text-slate-100">
+                            {{cost}}
+                          </h2>
+                          <ul class="mb-4 text-sm">
+                            <li class="p-2 text-neutral-400 leading-7">
+                              Mobile App Design
+                            </li>
+                            <li class="p-2 text-neutral-400 leading-7">
+                              Responsive Design
+                            </li>
+                            <li class="p-2 text-neutral-400 leading-7">
+                              Database Development
+                            </li>
+                            <li class="p-2 text-neutral-400 leading-7">
+                              Web Design
+                            </li>
+                            <li class="p-2 text-neutral-400 leading-7">
+                              24/7 Support
+                            </li>
+                          </ul>
+                          <button
+                            type="button"
+                            class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm"
+                          >
+                            Get
+                            {{package}}
+                          </button>
+                        </div>
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <div id="handleAbout-output"></div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="text-white px-4">
+      <!-- Close button -->
+      <div class="fixed top-5 right-closeBtnAbout close-resume">
+        <button type="button">
+          <ion-icon name="close-outline" class="size-11"></ion-icon>
+        </button>
+      </div>
+
+      <!-- Contents -->
+      <script id="handleResume" type="text/x-handlebars-template">
+        <div class="container mx-auto">
+          <div class="-mx-4 modal-content">
+            <div class="px-4">
+              <div class="my-16">
+                <!-- Check out my Resume -->
+                <div class="text-center">
+                  <div class="mb-20">
+                    <div class="mb-20">
+                      <p class="mb-4 text-neutral-400 text-sm">
+                        Check out my Resume
+                      </p>
+                      <p
+                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold"
+                      >
+                        Resume
+                      </p>
+                      <!-- Running bar -->
+                      <div
+                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
+                      >
+                        <div
+                          class="absolute top-0 left-0 w-full h-full animate-animationBar"
+                        >
+                          <div class="w-1 h-1 bg-black absolute"></div>
+                        </div>
+                        <div
+                          class="absolute top-0 left-2 w-full h-full animate-animationBar"
+                        >
+                          <div class="w-1 h-1 bg-black absolute"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Education and Experiene -->
+                <div class="mb-24 lg:mb-28">
+                  <div class="-mx-4 grid grid-cols-2">
+                    <div class="col-span-2 md:col-span-1 px-4 md:mr-5">
+                      <h2
+                        class="text-white text-2xl font-medium mb-5 leading-tight"
+                      >
+                        Education
+                      </h2>
+                      {{#each education}}
+                        <div
+                          class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                        >
+                          <h6
+                            class="mb-2 text-white font-medium text-xl leading-5"
+                          >
+                            {{degree}}
+                          </h6>
+                          <p class="mb-2 text-neutral-400 text-sm leading-7">
+                            {{university}}
+                            /
+                            {{year}}
+                          </p>
+                          <p class="text-neutral-400 text-sm leading-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Optio quo repudiandae.
+                          </p>
+                        </div>
+                      {{/each}}
+                    </div>
+                    <div class="col-span-2 md:col-span-1 px-4 md:ml-5">
+                      <h2
+                        class="text-white text-2xl font-medium mb-5 leading-tight"
+                      >
+                        Experience
+                      </h2>
+                      {{#each experience}}
+                        <div
+                          class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
+                        >
+                          <h6
+                            class="mb-2 text-white font-medium text-xl leading-5"
+                          >
+                            {{position}}
+                          </h6>
+                          <p class="mb-2 text-neutral-400 text-sm leading-7">
+                            {{org}}
+                            /
+                            {{year}}
+                          </p>
+                          <p class="text-neutral-400 text-sm leading-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Optio quo repudiandae.
+                          </p>
+                        </div>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+                <!-- My Skills -->
+                <div class="mb-14 md:mb-4 lg:mb-8">
+                  <div class="mb-12">
+                    <p class="mb-4 text-sm leading-7 text-neutral-400">
+                      My level of knowledge in some tools
+                    </p>
+                    <h2 class="text-white text-4xl font-bold">My Skills</h2>
+                  </div>
+                  <div class="-mx-4 grid grid-cols-2">
+                    {{#each knowledge}}
+                      <div class="col-span-2 md:col-span-1 px-4">
+                        {{#each skills}}
+                          <div class="mb-10">
+                            <div
+                              class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[{{percentage}}]"
+                            >
+                              <span class="mr-3">{{language}}</span>
+                              <span class="">{{percentage}}</span>
+                            </div>
+                            <div
+                              class="text-base h-2.5 bg-neutral-700 bg-opacity-40"
+                            >
+                              <div
+                                class="text-base h-2.5 w-[{{percentage}}] bg-emerald-600 flex"
+                              ></div>
+                            </div>
+                          </div>
+                        {{/each}}
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>
+                <!-- Office tour -->
+                <div class="-mx-4 grid grid-cols-2">
+                  <div class="col-span-2 lg:col-span-1 px-4 mb-6 my-auto">
+                    <h3 class="text-3xl mb-3 font-semibold leading-10">
+                      Take a tour of my office
+                    </h3>
+                    <p
+                      class="text-sm leading-7 text-neutral-400 mb-4 lg:leading-8 xl:text-base xl:leading-8"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Quia cum quasi assumenda culpa praesentium consectetur
+                      voluptatibus expedita. Voluptatem tempore, aspernatur rem
+                      facilis, distinctio nemo! Odio velit, nemo dolorem
+                      voluptas!
+                    </p>
+                    <p
+                      class="text-sm leading-7 text-neutral-400 lg:leading-8 xl:text-base xl:leading-8"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Laudantium qui aspernatur unde mollitia, in laborum.
+                    </p>
+                  </div>
+                  <div class="col-span-2 lg:col-span-1 px-4">
+                    <a
+                      class=""
+                      href="https://www.youtube.com/watch?v=doteMqP6eSc"
+                    >
+                      <div class="relative text-center z-10 overflow-hidden">
+                        <img
+                          src="./src/img/video.jpg"
+                          alt=""
+                          class="z-20 rounded-sm h-full w-full opacity-80"
+                        />
+                        <div
+                          class="absolute w-full h-full top-0 hover:scale-110 transition"
+                        >
+                          <div
+                            class="size-14 bg-white absolute left-1/2 top-1/2 box-content rounded-full -mx-8 -my-8 text-center"
+                          >
+                            <div class="w-full h-full flex align-middle">
+                              <img
+                                src="./src/img/play-button.png"
+                                alt=""
+                                class="m-auto size-4"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <div id="handleResume-output"></div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="text-neutral-400 leading-8 content-center">
+      <div class="mx-auto">
+        <!-- Close button -->
+        <div class="top-5 right-[5%] fixed z-40 close-portfolio">
+          <button class="text-white text-5xl">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <!-- Contents -->
+        <script id="handlebarsPortfolio" type="text/x-handlebars-template">
+        <div class="container mx-auto">
+          <div class="px-4 modal-content">
+            <div class="-mx-4">
+              <div class="my-20">
+                <div class="w-full mx-auto">
+                  <!-- Showcase -->
+                  <div class="mb-20 text-center">
+                    <p class="mb-4 text-base">
+                      Showcasing some of my best work
+                    </p>
+                    <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
+                      Portfolio
+                    </h2>
+                    <div
+                      class="container w-20 h-1 bg-emerald-600 relative overflow-hidden mx-auto">
+                      <div
+                        class="square-container absolute top-0 left-0 w-full h-full animate-animationBar">
+                        <div class="square w-1 h-1 bg-black absolute"></div>
+                      </div>
+                      <div
+                        class="square-container absolute top-0 left-2 w-full h-full animate-animationBar">
+                        <div class="square w-1 h-1 bg-black absolute"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Filter -->
+                  <div>
+                    <div class="-mx-4 text-center">
+                      <div class="px-4 text-base leading-8">
+                        <ul class="mb-4 filter-group">
+                          {{#each filterButton}}
+                          <li data-filter={{dataFilter}}
+                            class="mr-4 inline-block border-b border-b-neutral-900 hover:text-green-600 hover:border-b-green-600 hover:cursor-pointer transition duration-100 ease-in-out filter-button">
+                            {{nameFilter}}
+                          </li>
+                          {{/each}}
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="grid-custom">
+                      {{#each portfolioItem}}
+                      <div class="group w-1/2 lg:w-1/3 px-4 grid-item {{filterGroup}}">
+                        <a class="portfolio-item">
+                          <div class="flex items-center relative mb-8">
+                            <img id="portfolio-img"
+                              class="group-hover:opacity-10 transition-opacity duration-150 ease-in-out" src={{srcImg}}
+                              alt={{altImg}} />
+                            <div
+                              class="absolute left-0 text-center opacity-0 w-full px-1 py-5 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
+                              <h6 class="mb-3 text-base text-white">
+                                {{nameImg}}
+                              </h6>
+                              <span class="font-semibold text-sm text-green-600">More Info</span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Zoom Img -->
+            <div
+              id="close-zoom-img"
+              class="fixed top-0 left-0 right-0 bottom-0 z-50 container-item hidden">
+              <div class="w-full h-full bg-black bg-opacity-90"></div>
+              <div
+                class="absolute flex w-full h-full items-center justify-center top-0 left-0">
+                <img
+                  class="max-h-full img-item"
+                  src="src/img/item-3.jpg"
+                  alt="" />
+              </div>
+              <div class="top-6 right-4 md:right-10 xl:right-16 fixed z-40">
+                <button class="text-white text-3xl">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </script>
+      <div id="handlebarsPortfolio-output"></div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="text-neutral-400 leading-8">
+      <div class="container mx-auto">
+        <!-- Close button -->
+        <div class="top-5 right-closeBtnAbout fixed z-50 close-blog">
+          <button class="text-white text-5xl">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <!-- Contents -->
+        <script id="handlebarsBlog" type="text/x-handlebars-template">
+          <div class="px-4 modal-content">
+            <div class="-mx-4">
+              <div class="my-20">
+                <div class="w-full mx-auto">
+                  <div class="mb-20 text-center">
+                    <p class="mb-4 text-base">Check out my latest blog posts</p>
+                    <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
+                      My Blog
+                    </h2>
+                    <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
+                      <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
+                        <div class="w-1 h-1 bg-black absolute"></div>
+                      </div>
+                      <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
+                        <div class="w-1 h-1 bg-black absolute"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 lg:grid-cols-3">
+                    {{#each postBlog}}
+                    <div class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
+                      <div class="mb-10 lg:mb-20">
+                        <a class="h-full relative" href={{href}}>
+                          <img class="w-full" src={{srcImg}} alt={{altImg}} />
+                          <span class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600">{{date}}</span>
+                        </a>
+                        <div class="pt-3">
+                          <a>
+                            <h5 class="text-white text-xl font-semibold mb-1.5">
+                              {{title}}
+                            </h5>
+                          </a>
+                          <p class="text-sm leading-7">
+                            {{description}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <div id="handlebarsBlog-output"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="text-neutral-400 leading-8">
+      <div class="container mx-auto">
+        <!-- Close button -->
+        <div class="top-9 right-closeBtnBlog fixed z-50 close-contact">
+          <button class="text-white text-5xl">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <!-- Contents -->
+        <script id="handlebarsContact" type="text/x-handlebars-template">
+          <div class="px-4 modal-contents">
+            <div class="-mx-4">
+              <div class="my-20">
+                <!-- Get in touch -->
+                <div class="w-full mx-auto">
+                  <div class="mb-20 text-center">
+                    <p class="mb-4 text-sm">Feel free to contact me anytimes</p>
+                    <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
+                      Get in Touch
+                    </h2>
+                    <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
+                      <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
+                        <div class="w-1 h-1 bg-black absolute"></div>
+                      </div>
+                      <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
+                        <div class="w-1 h-1 bg-black absolute"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lg:grid lg:grid-cols-12">
+                  <!-- Message -->
+                  <div class="mb-10 lg:col-span-7 lg:mb-0 px-4">
+                    <form action="" method="">
+                      <h4 class="text-white text-2xl mb-6">Message Me</h4>
+                      <div class="text-neutral-500 md:grid md:grid-cols-2 -mx-4">
+                        {{#each message}}
+                        <div class="{{stypeDiv}} px-4 mb-9 xl:mb-6">
+                          <{{typeInput}}
+                            class="placeholder:text-neutral-500 bg-neutral-900 px-4 py-2 w-full border-b border-b-neutral-900 focus:outline-none focus:border-b focus:border-b-green-600 transition duration-150 ease-in-out {{stypeInput}}"
+                            placeholder={{placeholder}} {{required}} rows={{rows}} ></{{typeInput}}>
+                        </div>
+                        {{/each}}
+                        <div class="col-span-2 px-4">
+                          <button
+                            class="text-white border border-none py-2.5 px-7 bg-emerald-600 rounded-3xl active:bg-green-900 transition duration-150 ease-in-out text-sm leading-6"
+                            type="submit">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- Contact info -->
+                  <div class="lg:col-span-5 px-4">
+                    <div class="lg:pl-4">
+                      <h4 class="text-white text-2xl mb-3">Contact Info</h4>
+                      <p class="mb-7 text-sm leading-7">
+                        Always available for freelance work if the right project
+                        comes along, Feel free to contact me!
+                      </p>
+                      <ul class="list-none">
+                        {{#each contactInfo}}
+                        <li>
+                          <div class="flex">
+                            <span class="text-emerald-600 text-4xl my-auto mr-3">
+                              <ion-icon name={{nameLogo}} class="size-8 lg:size-9"></ion-icon>
+                            </span>
+                            <div class="border-l-2 border-white border-opacity-20 block pl-5 py-3 w-full {{stype}}">
+                              <h6 class="text-white text-base font-semibold leading-5">
+                                {{nameField}}
+                              </h6>
+                              <span class="text-sm">{{valueField}}</span>
+                            </div>
+                          </div>
                         </li>
                         {{/each}}
                       </ul>
                     </div>
                   </div>
-                  <div class="grid-custom">
-                    {{#each portfolioItem}}
-                    <div class="group w-1/2 lg:w-1/3 px-4 grid-item {{filterGroup}}">
-                      <a class="portfolio-item">
-                        <div class="flex items-center relative mb-8">
-                          <img id="portfolio-img"
-                            class="group-hover:opacity-10 transition-opacity duration-150 ease-in-out" src={{srcImg}}
-                            alt={{altImg}} />
-                          <div
-                            class="absolute left-0 text-center opacity-0 w-full px-1 py-5 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
-                            <h6 class="mb-3 text-base text-white">
-                              {{nameImg}}
-                            </h6>
-                            <span class="font-semibold text-sm text-green-600">More Info</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    {{/each}}
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Zoom Img -->
-          <div id="close-zoom-img" class="fixed top-0 left-0 right-0 bottom-0 z-50 container-item hidden">
-            <div class="w-full h-full bg-black bg-opacity-90"></div>
-            <div class="absolute flex w-full h-full items-center justify-center top-0 left-0">
-              <img class="max-h-full img-item" src="src/img/item-3.jpg" alt="" />
-            </div>
-            <div class="top-6 right-4 md:right-10 xl:right-16 fixed z-40">
-              <button class="text-white text-3xl">
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-            </div>
-          </div>
-        </div>
+        </script>
+        <div id="handlebarsContact-output"></div>
       </div>
-      </script>
-      <div id="portfolio-template"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Blog -->
-  <section id="blog" class="text-neutral-400 leading-8">
-    <div class="container mx-auto">
-      <!-- Close button -->
-      <div class="top-5 right-closeBtnAbout fixed z-50 close-blog">
-        <button class="text-white text-5xl">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-      </div>
-      <!-- Contents -->
-      <script id="blog-handlebars" type="text/x-handlebars-template">
-      <div class="px-4 modal-content">
-        <div class="-mx-4">
-          <div class="my-20">
-            <div class="w-full mx-auto">
-              <div class="mb-20 text-center">
-                <p class="mb-4 text-base">Check out my latest blog posts</p>
-                <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
-                  My Blog
-                </h2>
-                <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
-                  <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
-                    <div class="w-1 h-1 bg-black absolute"></div>
-                  </div>
-                  <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
-                    <div class="w-1 h-1 bg-black absolute"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-1 lg:grid-cols-3">
-                {{#each postBlog}}
-                <div class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
-                  <div class="mb-10 lg:mb-20">
-                    <a class="h-full relative" href={{href}}>
-                      <img class="w-full" src={{srcImg}} alt={{altImg}} />
-                      <span class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600">{{date}}</span>
-                    </a>
-                    <div class="pt-3">
-                      <a>
-                        <h5 class="text-white text-xl font-semibold mb-1.5">
-                          {{title}}
-                        </h5>
-                      </a>
-                      <p class="text-sm leading-7">
-                        {{description}}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {{/each}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </script>
-      <div id="blog-template"></div>
-    </div>
-  </section>
+    <script type="module" src="/src/main.ts"></script>
 
-  <!-- Contact -->
-  <section id="contact" class="text-neutral-400 leading-8">
-    <div class="container mx-auto">
-      <!-- Close button -->
-      <div class="top-9 right-[4%] fixed z-50 close-contact">
-        <button class="text-white text-5xl">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-      </div>
-      <!-- Contents -->
-      <script id="contact-handlebars" type="text/x-handlebars-template">
-      <div class="px-4 modal-contents">
-        <div class="-mx-4">
-          <div class="my-20">
-            <!-- Get in touch -->
-            <div class="w-full mx-auto">
-              <div class="mb-20 text-center">
-                <p class="mb-4 text-sm">Feel free to contact me anytimes</p>
-                <h2 class="text-white mb-9 text-4xl md:text-5xl font-bold">
-                  Get in Touch
-                </h2>
-                <div class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
-                  <div class="absolute top-0 left-0 w-full h-full animate-animationBar">
-                    <div class="w-1 h-1 bg-black absolute"></div>
-                  </div>
-                  <div class="absolute top-0 left-2 w-full h-full animate-animationBar">
-                    <div class="w-1 h-1 bg-black absolute"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="lg:grid lg:grid-cols-12">
-              <!-- Message -->
-              <div class="mb-10 lg:col-span-7 lg:mb-0 px-4">
-                <form action="" method="">
-                  <h4 class="text-white text-2xl mb-6">Message Me</h4>
-                  <div class="text-neutral-500 md:grid md:grid-cols-2 -mx-4">
-                    {{#each message}}
-                    <div class="{{stypeDiv}} px-4 mb-9 xl:mb-6">
-                      <{{typeInput}}
-                        class="placeholder:text-neutral-500 bg-neutral-900 px-4 py-2 w-full border-b border-b-neutral-900 focus:outline-none focus:border-b focus:border-b-green-600 transition duration-150 ease-in-out {{stypeInput}}"
-                        placeholder={{placeholder}} {{required}} rows={{rows}} ></{{typeInput}}>
-                    </div>
-                    {{/each}}
-                    <div class="col-span-2 px-4">
-                      <button
-                        class="text-white border border-none py-2.5 px-7 bg-emerald-600 rounded-3xl active:bg-green-900 transition duration-150 ease-in-out text-sm leading-6"
-                        type="submit">
-                        Send Message
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <!-- Contact info -->
-              <div class="lg:col-span-5 px-4">
-                <div class="lg:pl-4">
-                  <h4 class="text-white text-2xl mb-3">Contact Info</h4>
-                  <p class="mb-7 text-sm leading-7">
-                    Always available for freelance work if the right project
-                    comes along, Feel free to contact me!
-                  </p>
-                  <ul class="list-none">
-                    {{#each contactInfo}}
-                    <li>
-                      <div class="flex">
-                        <span class="text-emerald-600 text-4xl my-auto mr-3">
-                          <ion-icon name={{nameLogo}} class="size-8 lg:size-9"></ion-icon>
-                        </span>
-                        <div class="border-l-2 border-white border-opacity-20 block pl-5 py-3 w-full {{stype}}">
-                          <h6 class="text-white text-base font-semibold leading-5">
-                            {{nameField}}
-                          </h6>
-                          <span class="text-sm">{{valueField}}</span>
-                        </div>
-                      </div>
-                    </li>
-                    {{/each}}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </script>
-      <div id="contact-template"></div>
-    </div>
-  </section>
-
-  <script src="src/js/animatedModal.js"></script>
-  <!-- animmatedModaljs -->
-  <script>
-    $("#modalAbout").animatedModal({});
-
-    $("#modalResume").animatedModal();
-
-    $("#modalPortfolio").animatedModal();
-
-    $("#modalBlog").animatedModal();
-
-    $("#modalContact").animatedModal();
-  </script>
-
-  <script type="module" src="/src/main.ts"></script>
-
-  <!-- Swiperjs -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      breakpoints: {
-        // when window width is >= 320px
-        320: {
-          enabled: true,
-          slidesPerView: 1,
-        },
-        // when window width is >= 768
-        768: {
-          enabled: true,
-          slidesPerView: 2,
-        },
-      },
-    });
-    var portfolio = document.getElementById("portfolio-handlebars").innerHTML;
-    var portfolioTemplate = Handlebars.compile(portfolio);
-    var blog = document.getElementById("blog-handlebars").innerHTML;
-    var blogTemplate = Handlebars.compile(blog);
-    var contact = document.getElementById("contact-handlebars").innerHTML;
-    var contactTemplate = Handlebars.compile(contact);
-
-    var context = {
-      filterButton: [
+    <!-- handlebarjs -->
+    <script>
+      // Home
+      const sourceHome = document.getElementById("handlebarsHome").innerHTML;
+      const templateHome = Handlebars.compile(sourceHome);
+      const dataHome = {
+        button: [
+          {
+            name: 'About',
+            href: 'about'
+          },
+          {
+            name: 'Resume',
+            href: 'resume'
+          },
+          {
+            name: 'Portfolio',
+            href: 'portfolio',
+          },
+          {
+            name: 'Blog',
+            href: 'blog'
+          },
+          {
+            name: 'Contact',
+            href: 'contact'
+          }
+        ],
+        languages: [
+          {
+            hreflanguage: '0',
+            language: 'ENG',
+          },
+          {
+            hreflanguage: '0',
+            language: 'JAP',
+          }
+        ],
+        media: [
+          {
+            hrefmedia: '0',
+            svg: `<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="21.21"
+                    height="23"
+                    viewBox="0 0 50 50"
+                    fill="#fff">
+                    <path
+                      d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"></path>
+                  </svg>`
+          },
+          {
+            hrefmedia: '0',
+            svg: `<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="21.21"
+                    height="23"
+                    viewBox="0 0 50 50"
+                    fill="#fff">
+                    <path
+                      d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z"></path>
+                  </svg>`
+          },
+          {
+            hrefmedia: '0',
+            svg: `<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="21.21"
+                    height="23"
+                    viewBox="0 0 30 30"
+                    fill="#fff">
+                    <path
+                      d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+                  </svg>`
+          },
+          {
+            hrefmedia: '0',
+            svg: `<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="21.21"
+                    height="23"
+                    viewBox="0 0 30 30"
+                    fill="#fff">
+                    <path
+                      d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                  </svg>`
+          },
+          {
+            hrefmedia: '0',
+            svg: `<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="21.21"
+                    height="23"
+                    viewBox="0 0 30 30"
+                    fill="#fff">
+                    <path
+                      d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
+                  </svg>`
+          },
+        ]
+      };
+      document.getElementById("handlebarsHome-output").innerHTML =
+        templateHome(dataHome);
+      // About
+      const sourceAbout = document.getElementById("handleAbout").innerHTML;
+      const templateAbout = Handlebars.compile(sourceAbout);
+      const dataAbout = {
+        services: [
+          {
+            icon: "logo-css3",
+            name: "Design Trends",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+          {
+            icon: "images",
+            name: "PSD Design",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+          {
+            icon: "logo-ionic",
+            name: "Customer Support",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+          {
+            icon: "logo-wordpress",
+            name: "Web Development",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+          {
+            icon: "move",
+            name: "Fully Responsive",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+          {
+            icon: "rocket-sharp",
+            name: "Branding",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+          },
+        ],
+        testimonials: [
+          {
+            img: "https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-2.jpg",
+            name: "John Santana",
+            customer: "Entrepreneur",
+          },
+          {
+            img: "https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-3.jpg",
+            name: "Maria Wilson",
+            customer: "Envato Customer",
+          },
+          {
+            img: "https://kaleidoscopic-pie-2341a3.netlify.app/template/img/client-1.jpg",
+            name: "Julia Sakura",
+            customer: "Envato Customer",
+          },
+        ],
+        plan: [
+          {
+            img: "egg",
+            package: "Standard",
+            cost: "$19/month",
+          },
+          {
+            img: "rocket-sharp",
+            package: "Professional",
+            cost: "$29/month",
+          },
+          {
+            img: "logo-ionic",
+            package: "Business",
+            cost: "$39/month",
+          },
+        ],
+      };
+      document.getElementById("handleAbout-output").innerHTML =
+        templateAbout(dataAbout);
+      // Resume
+      const sourceResume = document.getElementById("handleResume").innerHTML;
+      const templateResume = Handlebars.compile(sourceResume);
+      const dataResume = {
+        education: [
+          {
+            degree: "Computer Science",
+            university: "Cambridge University",
+            year: "2004-2007",
+          },
+          {
+            degree: "Bachelor Degree",
+            university: "University of Tokyo",
+            year: "2008-2010",
+          },
+          {
+            degree: "Master Degree",
+            university: "Harvard University",
+            year: "2012-2015",
+          },
+        ],
+        experience: [
+          {
+            position: "Software Engineer",
+            org: "Adobe",
+            year: "2015 - 2017",
+          },
+          {
+            position: "Back-End Developer",
+            org: "Google",
+            year: "2017 - 2018",
+          },
+          {
+            position: "UI/UX Designer",
+            org: "Discord",
+            year: "2019 - Present",
+          },
+        ],
+        knowledge: [
+          {
+            skills: [
+              {
+                language: "HTML/CSS",
+                percentage: "95%",
+              },
+              {
+                language: "Web Design",
+                percentage: "80%",
+              },
+              {
+                language: "JavaScript",
+                percentage: "90%",
+              },
+            ],
+          },
+          {
+            skills: [
+              {
+                language: "React JS",
+                percentage: "90%",
+              },
+              {
+                language: "Express.js",
+                percentage: "95%",
+              },
+              {
+                language: "TypeScript",
+                percentage: "80%",
+              },
+            ],
+          },
+        ],
+      };
+      document.getElementById("handleResume-output").innerHTML =
+        templateResume(dataResume);
+        
+      // Portfolio
+      const sourcePortfolio = document.getElementById("handlebarsPortfolio").innerHTML;
+      const templatePortfolio = Handlebars.compile(sourcePortfolio);
+      const dataPortfolio = {
+        filterButton: [
         {
           dataFilter: "*",
           nameFilter: "All"
@@ -1106,7 +1183,7 @@
           nameFilter: "Photos"
         },
       ],
-      portfolioItem: [
+        portfolioItem: [
         {
           filterGroup: "design",
           srcImg: "src/img/item-1.jpg",
@@ -1144,8 +1221,14 @@
           nameImg: "Packaging Box Mockup"
         },
       ],
-      postBlog: [
-        {
+      };
+      document.getElementById("handlebarsPortfolio-output").innerHTML = templatePortfolio(dataPortfolio);
+      // Blog
+      const sourceBlog = document.getElementById("handlebarsBlog").innerHTML;
+      const templateBlog = Handlebars.compile(sourceBlog);
+      const dataBlog = {
+        postBlog: [
+          {
           srcImg: "src/img/postblog-1.jpg",
           altImg: "Blog post",
           href: "",
@@ -1153,7 +1236,7 @@
           title: "Top tools for Photographers",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-        {
+          {
           srcImg: "src/img/postblog-2.jpg",
           altImg: "Blog post",
           href: "",
@@ -1161,7 +1244,7 @@
           title: "Take a tour of my office",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-        {
+          {
           srcImg: "src/img/postblog-3.jpg",
           altImg: "Blog post",
           href: "",
@@ -1169,7 +1252,7 @@
           title: "How i became a Web Designer",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-        {
+          {
           srcImg: "src/img/postblog-4.jpg",
           altImg: "Blog post",
           href: "",
@@ -1177,7 +1260,7 @@
           title: "How to improve work performance",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-        {
+          {
           srcImg: "src/img/postblog-5.jpg",
           altImg: "Blog post",
           href: "",
@@ -1185,7 +1268,7 @@
           title: "How to work from home",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-        {
+          {
           srcImg: "src/img/postblog-6.jpg",
           altImg: "Blog post",
           href: "",
@@ -1193,8 +1276,14 @@
           title: "How to enjoy your business trip",
           description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id,repellendus magni, quas.",
         },
-      ],
-      contactInfo: [
+        ],
+      };
+      document.getElementById("handlebarsBlog-output").innerHTML = templateBlog(dataBlog);
+      // Contact
+      const sourceContact = document.getElementById("handlebarsContact").innerHTML;
+      const templateContact = Handlebars.compile(sourceContact);
+      const dataContact = {
+        contactInfo: [
         {
           nameLogo: "logo-ionic",
           nameField: "Name",
@@ -1220,7 +1309,7 @@
           stype: "pb-0"
         },
       ],
-      message: [
+        message: [
         {
           typeInput: "input",
           stypeDiv: "",
@@ -1254,11 +1343,73 @@
           required: "required",
         },
       ]
-    };
-    document.getElementById("portfolio-template").innerHTML = portfolioTemplate(context);
-    document.getElementById("blog-template").innerHTML = blogTemplate(context);
-    document.getElementById("contact-template").innerHTML = contactTemplate(context);
-  </script>
-</body>
+      }
+      document.getElementById("handlebarsContact-output").innerHTML = templateContact(dataContact);
+    </script>
 
+    <!-- Swiperjs -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            enabled: true,
+            slidesPerView: 1,
+          },
+          // when window width is >= 768
+          768: {
+            enabled: true,
+            slidesPerView: 2,
+          },
+        },
+        pagination: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script src="src/js/animatedModal.js"></script>
+    <!-- animmatedModaljs -->
+    <script>
+      //demo 01
+      // $("#demo01").animatedModal();
+
+      $("#modalAbout").animatedModal({});
+
+      $("#modalResume").animatedModal();
+
+      $("#modalPortfolio").animatedModal();
+
+      $("#modalBlog").animatedModal();
+
+      $("#modalContact").animatedModal();
+
+      // //demo 02
+      // $("#demo02").animatedModal({
+      //   animatedIn: "fadeInUpBig",
+      //   animatedOut: "fadeOutDownBig",
+      //   color: "#3498db",
+      //   // Callbacks
+      //   beforeOpen: function () {
+      //     console.log("The animation was called");
+      //   },
+      //   afterOpen: function () {
+      //     console.log("The animation is completed");
+      //   },
+      //   beforeClose: function () {
+      //     console.log("The animation was called");
+      //   },
+      //   afterClose: function () {
+      //     console.log("The animation is completed");
+      //   },
+      // });
+    </script>
+  </body>
 </html>
