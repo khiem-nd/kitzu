@@ -276,7 +276,7 @@ const dataPortfolio = {
     },
     {
       dataFilter: "design",
-      nameFilter: "design",
+      nameFilter: "Design",
     },
     {
       dataFilter: "photos",
@@ -513,7 +513,7 @@ $(".grid-custom").isotope({
 $(document).ready(function () {
   setTimeout(() => {
     $(".filter-group").find("li").get(0).click();
-  }, 1000);
+  }, 1100);
 });
 
 $(".filter-group").on("click", "li", function () {
