@@ -321,17 +321,6 @@ export default {
             scale: "75%",
           },
         },
-        slideDown: {
-          "0%": {
-            transform: "rotateX(90deg)",
-          },
-          "70%": {
-            transform: "rotateX(20deg)",
-          },
-          "100%": {
-            transform: "rotateX(0deg)",
-          },
-        },
       },
       animation: {
         shine: "shine 0.8s",
@@ -345,7 +334,6 @@ export default {
         animationBar: "barMove 3s linear infinite forwards",
         "zoom-in-img": "zoomInImg 0.07s linear forwards transition",
         "zoom-out-img": "zoomOutImg 0.07s linear forwards transition",
-        slidedown: "slideDown 0.3s ease-in-out forwards",
       },
       fontFamily: {
         poppins: ["Poppins"],

@@ -21,18 +21,20 @@
         left: "0px",
         zIndexIn: "9999",
         zIndexOut: "-9999",
-        color: "#111",
+        color: modal.attr("href").replace("#", "") == 'overlay'? "#111" : "#000",
         opacityIn: "1",
         opacityOut: "0",
         animatedIn: "slideInUp",
         animatedOut: "slideOutDown",
         animationDuration: "0.5s",
+        animationDelayIn: modal.attr("href").replace("#", "") == 'overlay'? "0s" : "0.5s",
+        animationDelayOut: modal.attr("href").replace("#", "") == 'overlay'? "0.5s" : "0s",
         overflow: "auto",
         // Callbacks
-        beforeOpen: function () {},
-        afterOpen: function () {},
-        beforeClose: function () {},
-        afterClose: function () {},
+        beforeOpen: function () { },
+        afterOpen: function () { },
+        beforeClose: function () { },
+        afterClose: function () { },
       },
       options
     );
@@ -64,6 +66,7 @@
       "-moz-animation-duration": settings.animationDuration,
       "-ms-animation-duration": settings.animationDuration,
       "animation-duration": settings.animationDuration,
+      "animation-delay": settings.animationDelay,
     };
     //Apply stles
     id.css(initStyles);
@@ -80,7 +83,7 @@
 
         if (id.hasClass(settings.modalTarget + "-on")) {
           settings.beforeOpen();
-          id.css({ opacity: settings.opacityIn, "z-index": settings.zIndexIn });
+          id.css({ opacity: settings.opacityIn, "z-index": settings.zIndexIn, animationDelay: settings.animationDelayIn });
           id.addClass(settings.animatedIn);
           id.one(
             "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
@@ -92,6 +95,7 @@
 
     closeBt.click(function (event) {
       event.preventDefault();
+      $('.close-overlay').get(0).click();
       $("body, html").css({ overflow: "auto" });
 
       settings.beforeClose(); //beforeClose
@@ -101,6 +105,7 @@
       }
 
       if (id.hasClass(settings.modalTarget + "-off")) {
+        id.css({ animationDelay: settings.animationDelayOut });
         id.removeClass(settings.animatedIn);
         id.addClass(settings.animatedOut);
         id.one(
