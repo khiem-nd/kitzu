@@ -17,7 +17,7 @@
   }
 }
 
-.dropdown_menu-7 {
+/* .dropdown {
   animation: rotateMenu 500ms ease-in-out forwards;
   transform-origin: top center;
 }
@@ -32,4 +32,4 @@
   100% {
     transform: rotateX(0deg);
   }
-}
+} */
