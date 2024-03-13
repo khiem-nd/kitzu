@@ -1,0 +1,35 @@
+#typewriter {
+  color: #fff;
+  display: inline-block; /* Đảm bảo phần tử không thay đổi kích thước */
+}
+
+#cursor {
+  color: #fff;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+}
+
+/* .dropdown {
+  animation: rotateMenu 500ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+} */
