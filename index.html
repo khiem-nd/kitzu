@@ -26,7 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <!-- Vanilla Lazyload -->
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.min.js"></script>
@@ -38,40 +38,36 @@
     <section
       id="home"
       class="bg-dark text-white font-normal text-base leading-7 overflow-hidden">
-      <script id="handlebarsHome" type="text/x-handlebars-template">
+      <div id="handlebarsHome" type="text/x-handlebars-template">
         <!-- Navbar -->
         <nav
-          class="bg-transparent py-6 px-12 fixed left-0 right-0 top-0 z-50 md:flex md:flex-row justify-between flex text-white"
-        >
+          class="bg-transparent py-6 px-12 fixed left-0 right-0 top-0 z-50 md:flex md:flex-row justify-between flex text-white">
           <a class="mr-4 py-1" href="#home-area">
             <img
               class="w-24 h-auto md:w-28"
-              src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/img-kitzu-logo.png"
-            />
+              src="https://kaleidoscopic-pie-2341a3.netlify.app/template/img/img-kitzu-logo.png" />
           </a>
           <ul
             id="top-menu"
-            class="py-2 hidden md:tqp-topmenu-expended md:flex md:items-center md:justify-end md:gap-7 font-light dropdown"
-          >
+            class="py-2 hidden md:tqp-topmenu-expended md:flex md:items-center md:justify-end md:gap-7 font-light dropdown">
             {{#each button}}
-              <li class="cursor-pointer py-1">
-                <a
-                  id="modal{{name}}"
-                  href="#{{href}}"
-                  onclick="$('#modalOverlay').get(0).click();"
-                >{{name}}</a>
-                <a id="modalOverlay" href="#overlay"></a>
-              </li>
+            <li class="cursor-pointer py-1">
+              <a
+                id="modal{{name}}"
+                href="#{{href}}"
+                onclick="$('#modalOverlay').get(0).click();"
+                >{{name}}</a
+              >
+              <a id="modalOverlay" href="#overlay"></a>
+            </li>
             {{/each}}
           </ul>
           <div
             class="md:hidden max-md:justify-end max-md:flex cursor-pointer max-md:w-7 max-md:h-5 my-auto flex flex-col"
-            id="top-toggle"
-          >
+            id="top-toggle">
             <div class="self-end w-5/6 h-0.5 bg-white"></div>
             <span
-              class="w-7/12 h-0.5 font-extrabold my-auto bg-white self-end"
-            ></span>
+              class="w-7/12 h-0.5 font-extrabold my-auto bg-white self-end"></span>
             <div class="h-0.5 bg-white w-full self-end"></div>
           </div>
         </nav>
@@ -80,55 +76,47 @@
         <div
           class="h-screen bg-cover bg-center opacity-50 max-md:bg-custom-x-center"
           style="
-          background-image: url(https://kaleidoscopic-pie-2341a3.netlify.app/template/img/home.jpg);
-        "
-        ></div>
+            background-image: url(https://kaleidoscopic-pie-2341a3.netlify.app/template/img/home.jpg);
+          "></div>
         <div class="">
           <div
-            class="absolute inset-0 flex flex-col items-center justify-center"
-          >
+            class="absolute inset-0 flex flex-col items-center justify-center">
             <h1
-              class="text-white text-5xl md:text-6xl font-bold mb-8 text-center"
-            >
+              class="text-white text-5xl md:text-6xl font-bold mb-8 text-center">
               Emma Smith
             </h1>
             <h1 class="text-3xl text-center">
               I'm a
-              <span id="typewriter" class="text-center"></span><span
-                id="cursor"
-              >|</span>
+              <span id="typewriter" class="text-center"></span
+              ><span id="cursor">|</span>
             </h1>
           </div>
           <!-- Language and Media -->
           <div
-            class="flex justify-between items-end h-screen py-10 px-10 absolute inset-0"
-          >
+            class="flex justify-between items-end h-screen py-10 px-10 absolute inset-0">
             <div class="max-md:hidden">
               <ul class="">
                 {{#each languages}}
-                  <li class="transform rotate-90 py-2 text-white">
-                    <a href="#{{hreflanguage}}" class=""><span
-                        class=""
-                      >{{language}}</span></a>
-                  </li>
+                <li class="transform rotate-90 py-2 text-white">
+                  <a href="#{{hreflanguage}}" class=""
+                    ><span class="">{{language}}</span></a
+                  >
+                </li>
                 {{/each}}
               </ul>
             </div>
             <div class="max-md:hidden">
               <ul>
                 {{#each media}}
-                  <li class="py-2 text-white">
-                    <a href="#{{hrefmedia}}">
-                      {{{svg}}}
-                    </a>
-                  </li>
+                <li class="py-2 text-white">
+                  <a href="#{{hrefmedia}}"> {{{svg}}} </a>
+                </li>
                 {{/each}}
               </ul>
             </div>
           </div>
         </div>
-      </script>
-      <div id="handlebarsHome-output"></div>
+      </div>
     </section>
 
     <!-- Overlay -->
@@ -150,7 +138,7 @@
       </div>
 
       <!-- Contents -->
-      <script id="handleAbout" type="text/x-handlebars-template">
+      <div id="handleAbout" type="text/x-handlebars-template">
         <div class="container mx-auto">
           <div class="-mx-4 modal-content">
             <div class="px-4">
@@ -159,24 +147,22 @@
                 <div class="text-center">
                   <div class="mb-20">
                     <div class="mb-20">
-                      <p class="mb-4 text-neutral-400 text-sm">Get to know me</p>
+                      <p class="mb-4 text-neutral-400 text-sm">
+                        Get to know me
+                      </p>
                       <p
-                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold"
-                      >
+                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold">
                         About Me
                       </p>
                       <!-- Running bar -->
                       <div
-                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
-                      >
+                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
                         <div
-                          class="absolute top-0 left-0 w-full h-full animate-animationBar"
-                        >
+                          class="absolute top-0 left-0 w-full h-full animate-animationBar">
                           <div class="w-1 h-1 bg-black absolute"></div>
                         </div>
                         <div
-                          class="absolute top-0 left-2 w-full h-full animate-animationBar"
-                        >
+                          class="absolute top-0 left-2 w-full h-full animate-animationBar">
                           <div class="w-1 h-1 bg-black absolute"></div>
                         </div>
                       </div>
@@ -191,25 +177,21 @@
                       <img
                         class="lazy p-1 rounded-full size-48 md:size-60 mx-auto mb-8 object-cover lg:size-auto lg:h-pic1 lg:w-full lg:rounded-none lg:p-1 lg:mb-0 xl:w-pic2 xl:mx-0 xl:h-auto"
                         data-src="./src/img/info-img.jpg"
-                        alt="About Picture"
-                      />
+                        alt="About Picture" />
                     </div>
                     <div class="col-span-12 lg:col-span-7 lg:flex">
                       <div class="px-4 m-auto">
                         <h2
-                          class="text-green-600 text-lg lg:text-2xl mb-4 lg:max-xl:hidden"
-                        >
+                          class="text-green-600 text-lg lg:text-2xl mb-4 lg:max-xl:hidden">
                           Who am i?
                         </h2>
                         <h6
-                          class="text-xl leading-relaxed md:text-2xl md:leading-10 xl:text-3xl xl:leading-relaxed font-bold mb-4"
-                        >
+                          class="text-xl leading-relaxed md:text-2xl md:leading-10 xl:text-3xl xl:leading-relaxed font-bold mb-4">
                           I'm Emma Smith, a visual UX/UI Designer and Web
                           Developer
                         </h6>
                         <p
-                          class="text-neutral-400 leading-loose text-sm pb-7 border-b-2 border-white border-opacity-10 lg:pb-5 xl:pb-7 xl:leading-7"
-                        >
+                          class="text-neutral-400 leading-loose text-sm pb-7 border-b-2 border-white border-opacity-10 lg:pb-5 xl:pb-7 xl:leading-7">
                           I am a freelancer based in the United Kingdom and i
                           have been building noteworthy UX/UI designs and
                           websites for years, which comply with the latest
@@ -221,45 +203,40 @@
                         <div class="py-6 lg:mb-1 lg:py-5 xl:py-7">
                           <div class="grid grid-cols-2 -mx-4">
                             <div
-                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
-                            >
-                              <span
-                                class="font-normal text-gray-300 mr-2.5"
-                              >Name:</span>
+                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7">
+                              <span class="font-normal text-gray-300 mr-2.5"
+                                >Name:</span
+                              >
                               <p class="inline-block text-neutral-400">
                                 Emma Smith
                               </p>
                             </div>
                             <div
-                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7"
-                            >
-                              <span
-                                class="font-normal text-gray-300 mr-2.5"
-                              >Email:</span>
-                              <p
-                                class="inline-block text-green-600 hover:text-green-900 transition"
+                              class="text-sm px-4 col-span-2 mb-2.5 md:col-span-1 leading-7">
+                              <span class="font-normal text-gray-300 mr-2.5"
+                                >Email:</span
                               >
-                                <a
-                                  href="mailto:emma@example.com"
-                                >emma@example.com</a>
+                              <p
+                                class="inline-block text-green-600 hover:text-green-900 transition">
+                                <a href="mailto:emma@example.com"
+                                  >emma@example.com</a
+                                >
                               </p>
                             </div>
                           </div>
                           <div class="grid grid-cols-2 md:mb-0 -mx-4">
                             <div
-                              class="text-sm px-4 col-span-2 mb-2.5 md:mb-0 md:col-span-1 leading-7"
-                            >
-                              <span
-                                class="font-normal text-gray-300 mr-2.5"
-                              >Age:</span>
+                              class="text-sm px-4 col-span-2 mb-2.5 md:mb-0 md:col-span-1 leading-7">
+                              <span class="font-normal text-gray-300 mr-2.5"
+                                >Age:</span
+                              >
                               <p class="inline-block text-neutral-400">21</p>
                             </div>
                             <div
-                              class="text-sm px-4 col-span-2 md:col-span-1 leading-7"
-                            >
-                              <span
-                                class="font-normal text-gray-300 mr-2.5"
-                              >From:</span>
+                              class="text-sm px-4 col-span-2 md:col-span-1 leading-7">
+                              <span class="font-normal text-gray-300 mr-2.5"
+                                >From:</span
+                              >
                               <p class="inline-block text-neutral-400">
                                 Liverpool, UK
                               </p>
@@ -270,24 +247,22 @@
                         <div class="lg:flex">
                           <button
                             type="button"
-                            class="mb-7 mr-6 px-9 py-2.5 md:mb-0 lg:mb-0 bg-green-600 border-solid rounded-3xl text-sm focus:bg-green-900 transition"
-                          >
+                            class="mb-7 mr-6 px-9 py-2.5 md:mb-0 lg:mb-0 bg-green-600 border-solid rounded-3xl text-sm focus:bg-green-900 transition">
                             Download CV
                           </button>
                           <ul class="inline-flex">
                             <div
-                              class="border border-white w-14 h-0.5 opacity-30 mr-6 my-auto"
-                            ></div>
+                              class="border border-white w-14 h-0.5 opacity-30 mr-6 my-auto"></div>
                             {{#each media}}
-                              <li class="mr-2.5 text-xl my-auto">
-                                <a
-                                  href="#0"
-                                  class="focus:text-green-600 transition"
+                            <li class="mr-2.5 text-xl my-auto">
+                              <a
+                                href="#0"
+                                class="focus:text-green-600 transition"
                                 ><ion-icon
-                                    name="{{icon}}"
-                                    class="opacity-80"
-                                  ></ion-icon></a>
-                              </li>
+                                  name="{{icon}}"
+                                  class="opacity-80"></ion-icon
+                              ></a>
+                            </li>
                             {{/each}}
                           </ul>
                         </div>
@@ -306,25 +281,22 @@
                   </div>
                   <div class="grid grid-cols-12 -mx-4">
                     {{#each services}}
-                      <div
-                        class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7"
-                      >
-                        <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
-                          <ion-icon
-                            name="{{icon}}"
-                            size="large"
-                            class="mb-5 size-14 text-green-600"
-                          ></ion-icon>
-                          <h6
-                            class="mb-3 text-white font-medium text-xl leading-5"
-                          >
-                            {{name}}
-                          </h6>
-                          <p
-                            class="text-neutral-400 text-sm leading-8"
-                          >{{text}}</p>
-                        </div>
+                    <div
+                      class="col-span-12 md:col-span-6 lg:col-span-4 px-4 mb-7">
+                      <div class="px-10 py-9 bg-neutral-700 bg-opacity-15">
+                        <ion-icon
+                          name="{{icon}}"
+                          size="large"
+                          class="mb-5 size-14 text-green-600"></ion-icon>
+                        <h6
+                          class="mb-3 text-white font-medium text-xl leading-5">
+                          {{name}}
+                        </h6>
+                        <p class="text-neutral-400 text-sm leading-8">
+                          {{text}}
+                        </p>
                       </div>
+                    </div>
                     {{/each}}
                   </div>
                 </div>
@@ -340,41 +312,38 @@
                   <div class="swiper mySwiper -mr-7">
                     <div class="swiper-wrapper">
                       {{#each testimonials}}
-                        <div class="swiper-slide overflow-hidden pr-7 text-sm">
-                          <div
-                            class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15"
-                          >
-                            <div class="mb-6 flex justify-between">
-                              <div class="flex">
-                                <img
-                                  class="mr-3.5 rounded-full size-14"
-                                  src="{{img}}"
-                                  alt=""
-                                />
-                                <div class="my-auto">
-                                  <h6 class="mb-2">{{name}}</h6>
-                                  <p class="text-neutral-400 leading-3">
-                                    {{customer}}
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="">
-                                <img
-                                  src="./src//img/quotation.png"
-                                  alt="quotation"
-                                  class="size-12"
-                                />
+                      <div class="swiper-slide overflow-hidden pr-7 text-sm">
+                        <div
+                          class="px-10 py-11 lg:py-12 bg-neutral-700 bg-opacity-15">
+                          <div class="mb-6 flex justify-between">
+                            <div class="flex">
+                              <img
+                                class="mr-3.5 rounded-full size-14"
+                                src="{{img}}"
+                                alt="" />
+                              <div class="my-auto">
+                                <h6 class="mb-2">{{name}}</h6>
+                                <p class="text-neutral-400 leading-3">
+                                  {{customer}}
+                                </p>
                               </div>
                             </div>
-                            <p class="text-sm text-neutral-400 leading-7">
-                              Emma did an excellent creative job, addressing our
-                              request quickly, and also providing her own
-                              graphic insight, being open to feedback and
-                              changes or edits when they arose. She worked with
-                              us the entire way. Highly recommended.
-                            </p>
+                            <div class="">
+                              <img
+                                src="./src//img/quotation.png"
+                                alt="quotation"
+                                class="size-12" />
+                            </div>
                           </div>
+                          <p class="text-sm text-neutral-400 leading-7">
+                            Emma did an excellent creative job, addressing our
+                            request quickly, and also providing her own graphic
+                            insight, being open to feedback and changes or edits
+                            when they arose. She worked with us the entire way.
+                            Highly recommended.
+                          </p>
                         </div>
+                      </div>
                       {{/each}}
                     </div>
                     <div>
@@ -399,46 +368,42 @@
                   </div>
                   <div class="-mx-4 grid grid-cols-3">
                     {{#each plan}}
-                      <div class="px-4 col-span-3 lg:col-span-1">
-                        <div
-                          class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15"
-                        >
-                          <ion-icon
-                            name="{{img}}"
-                            class="text-green-600 size-14 mb-7"
-                          ></ion-icon>
-                          <h3 class="mb-3.5 text-2xl font-bold leading-5">
-                            {{package}}
-                          </h3>
-                          <h2 class="mb-5 text-2xl font-light text-slate-100">
-                            {{cost}}
-                          </h2>
-                          <ul class="mb-4 text-sm">
-                            <li class="p-2 text-neutral-400 leading-7">
-                              Mobile App Design
-                            </li>
-                            <li class="p-2 text-neutral-400 leading-7">
-                              Responsive Design
-                            </li>
-                            <li class="p-2 text-neutral-400 leading-7">
-                              Database Development
-                            </li>
-                            <li class="p-2 text-neutral-400 leading-7">
-                              Web Design
-                            </li>
-                            <li class="p-2 text-neutral-400 leading-7">
-                              24/7 Support
-                            </li>
-                          </ul>
-                          <button
-                            type="button"
-                            class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm"
-                          >
-                            Get
-                            {{package}}
-                          </button>
-                        </div>
+                    <div class="px-4 col-span-3 lg:col-span-1">
+                      <div
+                        class="py-12 mx-auto text-center bg-neutral-700 bg-opacity-15">
+                        <ion-icon
+                          name="{{img}}"
+                          class="text-green-600 size-14 mb-7"></ion-icon>
+                        <h3 class="mb-3.5 text-2xl font-bold leading-5">
+                          {{package}}
+                        </h3>
+                        <h2 class="mb-5 text-2xl font-light text-slate-100">
+                          {{cost}}
+                        </h2>
+                        <ul class="mb-4 text-sm">
+                          <li class="p-2 text-neutral-400 leading-7">
+                            Mobile App Design
+                          </li>
+                          <li class="p-2 text-neutral-400 leading-7">
+                            Responsive Design
+                          </li>
+                          <li class="p-2 text-neutral-400 leading-7">
+                            Database Development
+                          </li>
+                          <li class="p-2 text-neutral-400 leading-7">
+                            Web Design
+                          </li>
+                          <li class="p-2 text-neutral-400 leading-7">
+                            24/7 Support
+                          </li>
+                        </ul>
+                        <button
+                          type="button"
+                          class="bg-green-600 rounded-3xl py-2.5 px-9 focus:bg-green-900 transition text-sm">
+                          Get {{package}}
+                        </button>
                       </div>
+                    </div>
                     {{/each}}
                   </div>
                 </div>
@@ -446,7 +411,7 @@
             </div>
           </div>
         </div>
-      </script>
+      </div>
       <div id="handleAbout-output"></div>
     </section>
 
@@ -460,7 +425,7 @@
       </div>
 
       <!-- Contents -->
-      <script id="handleResume" type="text/x-handlebars-template">
+      <div id="handleResume" type="text/x-handlebars-template">
         <div class="container mx-auto">
           <div class="-mx-4 modal-content">
             <div class="px-4">
@@ -473,22 +438,18 @@
                         Check out my Resume
                       </p>
                       <p
-                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold"
-                      >
+                        class="mb-9 text-4xl md:text-title lg:text-5xl font-bold">
                         Resume
                       </p>
                       <!-- Running bar -->
                       <div
-                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
-                      >
+                        class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
                         <div
-                          class="absolute top-0 left-0 w-full h-full animate-animationBar"
-                        >
+                          class="absolute top-0 left-0 w-full h-full animate-animationBar">
                           <div class="w-1 h-1 bg-black absolute"></div>
                         </div>
                         <div
-                          class="absolute top-0 left-2 w-full h-full animate-animationBar"
-                        >
+                          class="absolute top-0 left-2 w-full h-full animate-animationBar">
                           <div class="w-1 h-1 bg-black absolute"></div>
                         </div>
                       </div>
@@ -500,56 +461,46 @@
                   <div class="-mx-4 grid grid-cols-2">
                     <div class="col-span-2 md:col-span-1 px-4 md:mr-5">
                       <h2
-                        class="text-white text-2xl font-medium mb-5 leading-tight"
-                      >
+                        class="text-white text-2xl font-medium mb-5 leading-tight">
                         Education
                       </h2>
                       {{#each education}}
-                        <div
-                          class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
-                        >
-                          <h6
-                            class="mb-2 text-white font-medium text-xl leading-5"
-                          >
-                            {{degree}}
-                          </h6>
-                          <p class="mb-2 text-neutral-400 text-sm leading-7">
-                            {{university}}
-                            /
-                            {{year}}
-                          </p>
-                          <p class="text-neutral-400 text-sm leading-7">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Optio quo repudiandae.
-                          </p>
-                        </div>
+                      <div
+                        class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
+                        <h6
+                          class="mb-2 text-white font-medium text-xl leading-5">
+                          {{degree}}
+                        </h6>
+                        <p class="mb-2 text-neutral-400 text-sm leading-7">
+                          {{university}} / {{year}}
+                        </p>
+                        <p class="text-neutral-400 text-sm leading-7">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Optio quo repudiandae.
+                        </p>
+                      </div>
                       {{/each}}
                     </div>
                     <div class="col-span-2 md:col-span-1 px-4 md:ml-5">
                       <h2
-                        class="text-white text-2xl font-medium mb-5 leading-tight"
-                      >
+                        class="text-white text-2xl font-medium mb-5 leading-tight">
                         Experience
                       </h2>
                       {{#each experience}}
-                        <div
-                          class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800"
-                        >
-                          <h6
-                            class="mb-2 text-white font-medium text-xl leading-5"
-                          >
-                            {{position}}
-                          </h6>
-                          <p class="mb-2 text-neutral-400 text-sm leading-7">
-                            {{org}}
-                            /
-                            {{year}}
-                          </p>
-                          <p class="text-neutral-400 text-sm leading-7">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Optio quo repudiandae.
-                          </p>
-                        </div>
+                      <div
+                        class="px-12 py-8 pr-5 md:pr-12 bg-neutral-700 bg-opacity-15 border-l-2 border-l-green-600 border-b-2 border-b-neutral-800">
+                        <h6
+                          class="mb-2 text-white font-medium text-xl leading-5">
+                          {{position}}
+                        </h6>
+                        <p class="mb-2 text-neutral-400 text-sm leading-7">
+                          {{org}} / {{year}}
+                        </p>
+                        <p class="text-neutral-400 text-sm leading-7">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Optio quo repudiandae.
+                        </p>
+                      </div>
                       {{/each}}
                     </div>
                   </div>
@@ -564,25 +515,22 @@
                   </div>
                   <div class="-mx-4 grid grid-cols-2">
                     {{#each knowledge}}
-                      <div class="col-span-2 md:col-span-1 px-4">
-                        {{#each skills}}
-                          <div class="mb-10">
-                            <div
-                              class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[{{percentage}}]"
-                            >
-                              <span class="mr-3">{{language}}</span>
-                              <span class="">{{percentage}}</span>
-                            </div>
-                            <div
-                              class="text-base h-2.5 bg-neutral-700 bg-opacity-40"
-                            >
-                              <div
-                                class="text-base h-2.5 w-[{{percentage}}] bg-emerald-600 flex"
-                              ></div>
-                            </div>
-                          </div>
-                        {{/each}}
+                    <div class="col-span-2 md:col-span-1 px-4">
+                      {{#each skills}}
+                      <div class="mb-10">
+                        <div
+                          class="mb-1 flex justify-between font-normal leading-8 text-neutral-300 w-[{{percentage}}]">
+                          <span class="mr-3">{{language}}</span>
+                          <span class="">{{percentage}}</span>
+                        </div>
+                        <div
+                          class="text-base h-2.5 bg-neutral-700 bg-opacity-40">
+                          <div
+                            class="text-base h-2.5 w-[{{percentage}}] bg-emerald-600 flex"></div>
+                        </div>
                       </div>
+                      {{/each}}
+                    </div>
                     {{/each}}
                   </div>
                 </div>
@@ -593,8 +541,7 @@
                       Take a tour of my office
                     </h3>
                     <p
-                      class="text-sm leading-7 text-neutral-400 mb-4 lg:leading-8 xl:text-base xl:leading-8"
-                    >
+                      class="text-sm leading-7 text-neutral-400 mb-4 lg:leading-8 xl:text-base xl:leading-8">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Quia cum quasi assumenda culpa praesentium consectetur
                       voluptatibus expedita. Voluptatem tempore, aspernatur rem
@@ -602,8 +549,7 @@
                       voluptas!
                     </p>
                     <p
-                      class="text-sm leading-7 text-neutral-400 lg:leading-8 xl:text-base xl:leading-8"
-                    >
+                      class="text-sm leading-7 text-neutral-400 lg:leading-8 xl:text-base xl:leading-8">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Laudantium qui aspernatur unde mollitia, in laborum.
                     </p>
@@ -611,26 +557,21 @@
                   <div class="col-span-2 lg:col-span-1 px-4">
                     <a
                       class=""
-                      href="https://www.youtube.com/watch?v=doteMqP6eSc"
-                    >
+                      href="https://www.youtube.com/watch?v=doteMqP6eSc">
                       <div class="relative text-center z-10 overflow-hidden">
                         <img
                           data-src="./src/img/video.jpg"
                           alt=""
-                          class="lazy z-20 rounded-sm h-full w-full opacity-80"
-                        />
+                          class="lazy z-20 rounded-sm h-full w-full opacity-80" />
                         <div
-                          class="absolute w-full h-full top-0 hover:scale-110 transition"
-                        >
+                          class="absolute w-full h-full top-0 hover:scale-110 transition">
                           <div
-                            class="size-14 bg-white absolute left-1/2 top-1/2 box-content rounded-full -mx-8 -my-8 text-center"
-                          >
+                            class="size-14 bg-white absolute left-1/2 top-1/2 box-content rounded-full -mx-8 -my-8 text-center">
                             <div class="w-full h-full flex align-middle">
                               <img
                                 src="./src/img/play-button.png"
                                 alt=""
-                                class="m-auto size-4"
-                              />
+                                class="m-auto size-4" />
                             </div>
                           </div>
                         </div>
@@ -642,7 +583,7 @@
             </div>
           </div>
         </div>
-      </script>
+      </div>
       <div id="handleResume-output"></div>
     </section>
 
@@ -656,7 +597,7 @@
           </button>
         </div>
         <!-- Contents -->
-        <script id="handlebarsPortfolio" type="text/x-handlebars-template">
+        <div id="handlebarsPortfolio" type="text/x-handlebars-template">
           <div class="container mx-auto">
             <div class="px-4 modal-content">
               <div class="-mx-4">
@@ -668,21 +609,17 @@
                         Showcasing some of my best work
                       </p>
                       <h2
-                        class="text-white mb-9 text-4xl md:text-5xl font-bold"
-                      >
+                        class="text-white mb-9 text-4xl md:text-5xl font-bold">
                         Portfolio
                       </h2>
                       <div
-                        class="container w-20 h-1 bg-emerald-600 relative overflow-hidden mx-auto"
-                      >
+                        class="container w-20 h-1 bg-emerald-600 relative overflow-hidden mx-auto">
                         <div
-                          class="square-container absolute top-0 left-0 w-full h-full animate-animationBar"
-                        >
+                          class="square-container absolute top-0 left-0 w-full h-full animate-animationBar">
                           <div class="square w-1 h-1 bg-black absolute"></div>
                         </div>
                         <div
-                          class="square-container absolute top-0 left-2 w-full h-full animate-animationBar"
-                        >
+                          class="square-container absolute top-0 left-2 w-full h-full animate-animationBar">
                           <div class="square w-1 h-1 bg-black absolute"></div>
                         </div>
                       </div>
@@ -693,43 +630,40 @@
                         <div class="px-4 text-base leading-8">
                           <ul class="mb-4 filter-group">
                             {{#each filterButton}}
-                              <li
-                                data-filter={{dataFilter}}
-                                class="mr-4 inline-block border-b border-b-neutral-900 hover:text-green-600 hover:border-b-green-600 hover:cursor-pointer transition duration-100 ease-in-out filter-button"
-                              >
-                                {{nameFilter}}
-                              </li>
+                            <li
+                              data-filter="{{dataFilter}}"
+                              class="mr-4 inline-block border-b border-b-neutral-900 hover:text-green-600 hover:border-b-green-600 hover:cursor-pointer transition duration-100 ease-in-out filter-button">
+                              {{nameFilter}}
+                            </li>
                             {{/each}}
                           </ul>
                         </div>
                       </div>
                       <div class="grid-custom">
                         {{#each portfolioItem}}
-                          <div
-                            class="group w-1/2 lg:w-1/3 px-4 grid-item
-                              {{filterGroup}}"
-                          >
-                            <a class="portfolio-item">
-                              <div class="flex items-center relative mb-8">
-                                <img
-                                  id="portfolio-img"
-                                  class="lazy group-hover:opacity-10 transition-opacity duration-150 ease-in-out"
-                                  data-src={{srcImg}}
-                                  alt={{altImg}}
-                                />
-                                <div
-                                  class="absolute left-0 text-center opacity-0 w-full px-1 py-5 group-hover:opacity-100 transition-opacity duration-150 ease-in-out"
+                        <div
+                          class="group w-1/2 lg:w-1/3 px-4 grid-item
+                              {{filterGroup}}">
+                          <a class="portfolio-item">
+                            <div class="flex items-center relative mb-8">
+                              <img
+                                id="portfolio-img"
+                                class="lazy group-hover:opacity-10 transition-opacity duration-150 ease-in-out"
+                                data-src="{{srcImg}}"
+                                alt="{{altImg}}" />
+                              <div
+                                class="absolute left-0 text-center opacity-0 w-full px-1 py-5 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
+                                <h6 class="mb-3 text-base text-white">
+                                  {{nameImg}}
+                                </h6>
+                                <span
+                                  class="font-semibold text-sm text-green-600"
+                                  >More Info</span
                                 >
-                                  <h6 class="mb-3 text-base text-white">
-                                    {{nameImg}}
-                                  </h6>
-                                  <span
-                                    class="font-semibold text-sm text-green-600"
-                                  >More Info</span>
-                                </div>
                               </div>
-                            </a>
-                          </div>
+                            </div>
+                          </a>
+                        </div>
                         {{/each}}
                       </div>
                     </div>
@@ -738,7 +672,7 @@
               </div>
             </div>
           </div>
-        </script>
+        </div>
         <div id="handlebarsPortfolio-output"></div>
       </div>
     </section>
@@ -768,7 +702,7 @@
           </button>
         </div>
         <!-- Contents -->
-        <script id="handlebarsBlog" type="text/x-handlebars-template">
+        <div id="handlebarsBlog" type="text/x-handlebars-template">
           <div class="px-4 modal-content">
             <div class="-mx-4">
               <div class="my-20">
@@ -779,58 +713,49 @@
                       My Blog
                     </h2>
                     <div
-                      class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto"
-                    >
+                      class="container w-20 h-1 bg-green-600 relative overflow-hidden mx-auto">
                       <div
-                        class="absolute top-0 left-0 w-full h-full animate-animationBar"
-                      >
+                        class="absolute top-0 left-0 w-full h-full animate-animationBar">
                         <div class="w-1 h-1 bg-black absolute"></div>
                       </div>
                       <div
-                        class="absolute top-0 left-2 w-full h-full animate-animationBar"
-                      >
+                        class="absolute top-0 left-2 w-full h-full animate-animationBar">
                         <div class="w-1 h-1 bg-black absolute"></div>
                       </div>
                     </div>
                   </div>
                   <div class="grid grid-cols-1 lg:grid-cols-3">
                     {{#each postBlog}}
-                      <div
-                        class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto"
-                      >
-                        <div class="mb-10 lg:mb-20">
-                          <a class="h-full relative" href={{href}}>
-                            <img
-                              class="lazy w-full"
-                              data-src={{srcImg}}
-                              alt={{altImg}}
-                            />
-                            <span
-                              class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
-                            >{{date}}</span>
+                    <div
+                      class="text-left max-w-full sm:max-w-[66%] lg:max-w-full px-4 mx-auto">
+                      <div class="mb-10 lg:mb-20">
+                        <a class="h-full relative" href="{{href}}">
+                          <img
+                            class="lazy w-full"
+                            data-src="{{srcImg}}"
+                            alt="{{altImg}}" />
+                          <span
+                            class="text-white px-4 text-center bottom-0 inline-block absolute bg-green-600"
+                            >{{date}}</span
+                          >
+                        </a>
+                        <div class="pt-3">
+                          <a>
+                            <h5 class="text-white text-xl font-semibold mb-1.5">
+                              {{title}}
+                            </h5>
                           </a>
-                          <div class="pt-3">
-                            <a>
-                              <h5
-                                class="text-white text-xl font-semibold mb-1.5"
-                              >
-                                {{title}}
-                              </h5>
-                            </a>
-                            <p class="text-sm leading-7">
-                              {{description}}
-                            </p>
-                          </div>
+                          <p class="text-sm leading-7">{{description}}</p>
                         </div>
                       </div>
+                    </div>
                     {{/each}}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </script>
-        <div id="handlebarsBlog-output"></div>
+        </div>
       </div>
     </section>
 
@@ -844,7 +769,7 @@
           </button>
         </div>
         <!-- Contents -->
-        <script id="handlebarsContact" type="text/x-handlebars-template">
+        <div id="handlebarsContact" type="text/x-handlebars-template">
           <div class="px-4 modal-contents">
             <div class="-mx-4">
               <div class="my-20">
@@ -873,11 +798,16 @@
                       <div class="text-neutral-500 md:grid md:grid-cols-2 -mx-4">
                         {{#each message}}
                         <div class="{{stypeDiv}} px-4 mb-9 xl:mb-6">
-                          <{{typeInput}}
+                          <input
                             class="placeholder:text-neutral-500 bg-neutral-900 px-4 py-2 w-full border-b border-b-neutral-900 focus:outline-none focus:border-b focus:border-b-green-600 transition duration-150 ease-in-out {{stypeInput}}"
-                            placeholder={{placeholder}} {{required}} rows={{rows}} ></{{typeInput}}>
+                            placeholder={{placeholder}} {{required}} rows={{rows}} ></input>
                         </div>
                         {{/each}}
+                        <div class="md:col-span-2 px-4 mb-9 xl:mb-6">
+                          <textarea
+                            class="placeholder:text-neutral-500 bg-neutral-900 px-4 py-2 w-full border-b border-b-neutral-900 focus:outline-none focus:border-b focus:border-b-green-600 transition duration-150 ease-in-out"
+                            placeholder="message" required rows="4" ></textarea>
+                        </div>
                         <div class="col-span-2 px-4">
                           <button
                             class="text-white border border-none py-2.5 px-7 bg-emerald-600 rounded-3xl active:bg-green-900 transition duration-150 ease-in-out text-sm leading-6"
@@ -919,8 +849,7 @@
               </div>
             </div>
           </div>
-        </script>
-        <div id="handlebarsContact-output"></div>
+        </div>
       </div>
     </section>
 

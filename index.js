@@ -108,8 +108,7 @@ const dataHome = {
     },
   ],
 };
-document.getElementById("handlebarsHome-output").innerHTML =
-  templateHome(dataHome);
+document.getElementById("handlebarsHome").innerHTML = templateHome(dataHome);
 // About
 const sourceAbout = document.getElementById("handleAbout").innerHTML;
 const templateAbout = Handlebars.compile(sourceAbout);
@@ -198,8 +197,7 @@ const dataAbout = {
     },
   ],
 };
-document.getElementById("handleAbout-output").innerHTML =
-  templateAbout(dataAbout);
+document.getElementById("handleAbout").innerHTML = templateAbout(dataAbout);
 // Resume
 const sourceResume = document.getElementById("handleResume").innerHTML;
 const templateResume = Handlebars.compile(sourceResume);
@@ -273,8 +271,7 @@ const dataResume = {
     },
   ],
 };
-document.getElementById("handleResume-output").innerHTML =
-  templateResume(dataResume);
+document.getElementById("handleResume").innerHTML = templateResume(dataResume);
 
 // Portfolio
 const sourcePortfolio = document.getElementById(
@@ -339,7 +336,7 @@ const dataPortfolio = {
     },
   ],
 };
-document.getElementById("handlebarsPortfolio-output").innerHTML =
+document.getElementById("handlebarsPortfolio").innerHTML =
   templatePortfolio(dataPortfolio);
 // Blog
 const sourceBlog = document.getElementById("handlebarsBlog").innerHTML;
@@ -402,8 +399,7 @@ const dataBlog = {
     },
   ],
 };
-document.getElementById("handlebarsBlog-output").innerHTML =
-  templateBlog(dataBlog);
+document.getElementById("handlebarsBlog").innerHTML = templateBlog(dataBlog);
 // Contact
 const sourceContact = document.getElementById("handlebarsContact").innerHTML;
 const templateContact = Handlebars.compile(sourceContact);
@@ -459,17 +455,9 @@ const dataContact = {
       rows: "",
       required: "required",
     },
-    {
-      typeInput: "textarea",
-      stypeDiv: "md:col-span-2",
-      stypeInput: "",
-      placeholder: "Name",
-      rows: "4",
-      required: "required",
-    },
   ],
 };
-document.getElementById("handlebarsContact-output").innerHTML =
+document.getElementById("handlebarsContact").innerHTML =
   templateContact(dataContact);
 
 const topMenu = document.getElementById("top-menu");
